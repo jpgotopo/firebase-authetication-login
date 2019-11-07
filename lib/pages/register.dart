@@ -1,4 +1,7 @@
+<<<<<<< HEAD
 import 'package:firebase_auth/firebase_auth.dart';
+=======
+>>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
 import 'package:flutter/material.dart';
 import 'package:gpm_version_4/behaviors/hiddenScrollBehavior.dart';
 
@@ -9,6 +12,7 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
 
+<<<<<<< HEAD
   final _formKey = GlobalKey<FormState>();
 
   String _email;
@@ -45,6 +49,11 @@ class _RegisterPageState extends State<RegisterPage> {
 
   }
 
+=======
+  String _email;
+  String _password;
+
+>>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -56,7 +65,10 @@ class _RegisterPageState extends State<RegisterPage> {
         child: ScrollConfiguration(
           behavior: HiddenScrollBehavior(),
           child: Form(
+<<<<<<< HEAD
             key: _formKey,
+=======
+>>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
             child: ListView(
             children: <Widget>[
               FlutterLogo(style: FlutterLogoStyle.horizontal,
@@ -68,6 +80,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(labelText: 'Email'),
+<<<<<<< HEAD
                 validator: (val) {
                   if (val.isEmpty) {
 
@@ -81,11 +94,14 @@ class _RegisterPageState extends State<RegisterPage> {
                     _email = val;
                   });
                 },
+=======
+>>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
 
               ),
               TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(labelText: 'Password'),
+<<<<<<< HEAD
                 validator: (val) {
                   if (val.isEmpty) {
 
@@ -100,6 +116,8 @@ class _RegisterPageState extends State<RegisterPage> {
                   });
                 },
                 
+=======
+>>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
 
               ),
               Padding(
