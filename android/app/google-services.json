@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "766570040009",
+    "firebase_url": "https://gpm-version.firebaseio.com",
+    "project_id": "gpm-version",
+    "storage_bucket": "gpm-version.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:766570040009:android:2fc9dd1dfeef4ef80d1b18",
+        "android_client_info": {
+          "package_name": "com.jpdesignsweb.gpm_version_4"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "766570040009-tmnggagsjfic5k271himbm3fp5dsq91n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAdZqpxvWVh7epj0Hrr3ONoJVf8lObcRFY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "766570040009-tmnggagsjfic5k271himbm3fp5dsq91n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
