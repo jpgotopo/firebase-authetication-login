@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:gpm_version_4/behaviors/hiddenScrollBehavior.dart';
 
@@ -12,6 +13,37 @@ class _RegisterPageState extends State<RegisterPage> {
 
   String _email;
   String _password;
+
+  bool _isRegistering = false;
+
+  _register() {
+    if (_isRegistering) return;
+    setState(() {
+      _isRegistering = true;
+    });
+
+    final form = _formKey.currentState;
+
+    if(!form.validate()) {
+      setState(() {
+        _isRegistering = false;
+      });
+      return;
+    }
+
+    form.save();
+
+    try {
+      await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email, password: _password);
+      Navigator.of(context).pushReplacementNamed('maintabs')
+      
+    } catch (e) {
+      //TODO 
+    }
+    
+
+
+  }
 
   @override
   Widget build(BuildContext context) {
