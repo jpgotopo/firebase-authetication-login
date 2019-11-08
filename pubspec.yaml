@@ -1,5 +1,5 @@
 name: gpm_version_4
-description: A new Flutter project.
+description: A new Flutter project
 
 # The following defines the version and build number for your application.
 # A version number is three numbers separated by dots, like 1.2.43
@@ -19,10 +19,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-<<<<<<< HEAD
   firebase_auth:
-=======
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.

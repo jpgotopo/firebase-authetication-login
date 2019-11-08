@@ -1,34 +1,32 @@
-<<<<<<< HEAD
-import 'package:firebase_auth/firebase_auth.dart';
-=======
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
 import 'package:flutter/material.dart';
 import 'package:gpm_version_4/behaviors/hiddenScrollBehavior.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
-  _RegisterPageState createState() => _RegisterPageState();
+  State<StatefulWidget> createState() => _RegisterPageState();
 }
 
 class _RegisterPageState extends State<RegisterPage> {
 
-<<<<<<< HEAD
   final _formKey = GlobalKey<FormState>();
+  final _scaffoldKey = GlobalKey<ScaffoldState>();
 
   String _email;
   String _password;
 
   bool _isRegistering = false;
 
-  _register() {
+  _register() async {
     if (_isRegistering) return;
     setState(() {
       _isRegistering = true;
     });
-
+    _scaffoldKey.currentState.showSnackBar(SnackBar(content: Text('Registrando Usuario'),));
     final form = _formKey.currentState;
 
     if(!form.validate()) {
+      _scaffoldKey.currentState.hideCurrentSnackBar();
       setState(() {
         _isRegistering = false;
       });
@@ -39,25 +37,37 @@ class _RegisterPageState extends State<RegisterPage> {
 
     try {
       await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email, password: _password);
-      Navigator.of(context).pushReplacementNamed('maintabs')
+      Navigator.of(context).pushReplacementNamed('/maintabs');
       
     } catch (e) {
-      //TODO 
+      _scaffoldKey.currentState.hideCurrentSnackBar();
+      _scaffoldKey.currentState.showSnackBar(SnackBar(
+        content: Text(e),
+        duration: Duration(seconds: 10),
+        action: SnackBarAction(
+          label: 'Descartar',
+          onPressed: (){
+            _scaffoldKey.currentState.hideCurrentSnackBar();
+
+          },
+        ),
+      ));
+      
+    }finally {
+      setState(() {
+       _isRegistering = false; 
+      });
     }
     
 
 
   }
 
-=======
-  String _email;
-  String _password;
-
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        key: _scaffoldKey,
         title: Text('Registro'),
       ),
       body: Container(
@@ -65,10 +75,7 @@ class _RegisterPageState extends State<RegisterPage> {
         child: ScrollConfiguration(
           behavior: HiddenScrollBehavior(),
           child: Form(
-<<<<<<< HEAD
             key: _formKey,
-=======
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
             child: ListView(
             children: <Widget>[
               FlutterLogo(style: FlutterLogoStyle.horizontal,
@@ -80,28 +87,11 @@ class _RegisterPageState extends State<RegisterPage> {
                 autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(labelText: 'Email'),
-<<<<<<< HEAD
-                validator: (val) {
-                  if (val.isEmpty) {
-
-                    return 'Por favor, introduzca e-mail válido';
-                  }else {
-                    return null;
-                  }
-                },
-                onSaved: (val){
-                  setState(() {
-                    _email = val;
-                  });
-                },
-=======
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
 
               ),
               TextFormField(
                 obscureText: true,
                 decoration: InputDecoration(labelText: 'Password'),
-<<<<<<< HEAD
                 validator: (val) {
                   if (val.isEmpty) {
 
@@ -116,8 +106,6 @@ class _RegisterPageState extends State<RegisterPage> {
                   });
                 },
                 
-=======
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
 
               ),
               Padding(
@@ -128,8 +116,11 @@ class _RegisterPageState extends State<RegisterPage> {
           ),
           )
         ),
-      ),floatingActionButton: FloatingActionButton(
-        onPressed: (){},
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: (){
+          _register();
+        },
         child: Icon(Icons.person_add),
 
       ),

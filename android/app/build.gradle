@@ -38,11 +38,7 @@ android {
 
     defaultConfig {
         // TODO: Specify your own unique Application ID (https://developer.android.com/studio/build/application-id.html).
-<<<<<<< HEAD
         applicationId "com.jpdesignsweb.gpm_version_4"
-=======
-        applicationId "com.example.gpm_version_4"
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
         minSdkVersion 16
         targetSdkVersion 28
         versionCode flutterVersionCode.toInteger()
@@ -69,8 +65,5 @@ dependencies {
     androidTestImplementation 'androidx.test:runner:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
 }
-<<<<<<< HEAD
 
 apply plugin: 'com.google.gms.google-services'
-=======
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b

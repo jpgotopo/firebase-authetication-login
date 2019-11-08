@@ -1,9 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-<<<<<<< HEAD
     package="com.jpdesignsweb.gpm_version_4">
-=======
-    package="com.example.gpm_version_4">
->>>>>>> 0851a16bd1b48b4052383d40fbfd96638278355b
     <!-- io.flutter.app.FlutterApplication is an android.app.Application that
          calls FlutterMain.startInitialization(this); in its onCreate method.
          In most cases you can leave this as-is, but you if you want to provide
