@@ -1,4 +1,7 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gpm_version_4/pages/mainTabs.dart';
+import 'dart:async';
 import 'package:gpm_version_4/pages/register.dart';
 import 'package:gpm_version_4/routes.dart';
 import 'package:gpm_version_4/theme.dart';
@@ -7,18 +10,39 @@ void main() => runApp(new TodoApp());
 
 class TodoApp extends StatefulWidget {
   @override
-  _TodoAppState createState() => _TodoAppState();
+  State<StatefulWidget> createState() => _TodoAppState();
 }
 
 class _TodoAppState extends State<TodoApp> {
 
-  Widget rootPage = RegisterPage();
+  Widget _rootPage = RegisterPage();
+
+  Future<Widget> getRootPage() async {
+    FirebaseUser user = await FirebaseAuth.instance.currentUser();
+    if (user != null) {
+      return MainTabsPage();
+    } else {
+      return RegisterPage();
+    }
+  }
+
+  
+  @override
+  initState() { 
+    super.initState();
+    getRootPage().then((Widget page){
+      setState(() {
+        _rootPage = page;
+      });
+    });
+    
+  }
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: rootPage,
+      home: _rootPage,
       routes: buildAppRoutes(),
       theme: buildAppTheme(),
       

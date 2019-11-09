@@ -36,13 +36,14 @@ class _RegisterPageState extends State<RegisterPage> {
     form.save();
 
     try {
-      await FirebaseAuth.instance.createUserWithEmailAndPassword(email: _email, password: _password);
+      await FirebaseAuth.instance
+        .createUserWithEmailAndPassword(email: _email, password: _password);
       Navigator.of(context).pushReplacementNamed('/maintabs');
       
     } catch (e) {
       _scaffoldKey.currentState.hideCurrentSnackBar();
       _scaffoldKey.currentState.showSnackBar(SnackBar(
-        content: Text(e),
+        content: Text(e.message),
         duration: Duration(seconds: 10),
         action: SnackBarAction(
           label: 'Descartar',
@@ -52,13 +53,13 @@ class _RegisterPageState extends State<RegisterPage> {
           },
         ),
       ));
-      
+
     }finally {
       setState(() {
-       _isRegistering = false; 
+       _isRegistering = false;
       });
     }
-    
+
 
 
   }
@@ -66,8 +67,9 @@ class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      key: _scaffoldKey,
       appBar: AppBar(
-        key: _scaffoldKey,
+        
         title: Text('Registro'),
       ),
       body: Container(
@@ -80,13 +82,26 @@ class _RegisterPageState extends State<RegisterPage> {
             children: <Widget>[
               FlutterLogo(style: FlutterLogoStyle.horizontal,
               size: 200.0,
-              
-              
+
+
               ),
               TextFormField(
                 autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
+                cursorColor: Colors.black,
                 decoration: InputDecoration(labelText: 'Email'),
+                validator: (val) {
+                      if(val.isEmpty){
+                        return "Por favor ingresa un email valido";
+                      }else{
+                        return null;
+                      }
+                    },
+                    onSaved: (val){
+                      setState(() {
+                        _email = val;
+                      });
+                    },
 
               ),
               TextFormField(
@@ -118,7 +133,7 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: (){
+        onPressed: () {
           _register();
         },
         child: Icon(Icons.person_add),
