@@ -71,6 +71,7 @@ class _LoginPageState extends State<LoginPage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
+        backgroundColor: Colors.green[500],
         title: Text('Login'),
       ),
       body: Container(
@@ -81,12 +82,9 @@ class _LoginPageState extends State<LoginPage> {
             key: _formKey,
             child: ListView(
             children: <Widget>[
-              FlutterLogo(style: FlutterLogoStyle.horizontal,
-              size: 200.0,
-              
-              
-              ),
+              Image.asset('logo_gpm.png', width: 120.0, height: 120.0,),
               TextFormField(
+                style: TextStyle(color: Colors.blueAccent),
                 autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
                 decoration: InputDecoration(labelText: 'Email'),
@@ -128,8 +126,9 @@ class _LoginPageState extends State<LoginPage> {
               ),
               FlatButton(
                 onPressed: (){
-                  Navigator.of(context).pushNamed('forgotpassword');
+                  Navigator.of(context).pushNamed('/forgotpassword');
                 },
+                
                 textColor: Colors.blueGrey,
                 child: Text('Olvidé mi Password')
               )
@@ -138,6 +137,7 @@ class _LoginPageState extends State<LoginPage> {
           )
         ),
       ),floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF296690),
         onPressed: (){
           _login();
         },

@@ -11,7 +11,7 @@ class _SettingsPageState extends State<SettingsPage> {
   _logout() async {
 
     await FirebaseAuth.instance.signOut();
-    Navigator.of(context).pushReplacementNamed('register');
+    Navigator.of(context).pushReplacementNamed('/register');
 
   }
 

@@ -69,7 +69,7 @@ class _RegisterPageState extends State<RegisterPage> {
     return Scaffold(
       key: _scaffoldKey,
       appBar: AppBar(
-        
+        backgroundColor: Colors.green[500],
         title: Text('Registro'),
       ),
       body: Container(
@@ -80,15 +80,12 @@ class _RegisterPageState extends State<RegisterPage> {
             key: _formKey,
             child: ListView(
             children: <Widget>[
-              FlutterLogo(style: FlutterLogoStyle.horizontal,
-              size: 200.0,
-
-
-              ),
+              Image.asset('logo_gpm.png', width: 120.0, height: 120.0,),
               TextFormField(
+                style: TextStyle(color: Colors.blueAccent),
                 autocorrect: false,
                 keyboardType: TextInputType.emailAddress,
-                cursorColor: Colors.black,
+                cursorColor: Colors.blue,
                 decoration: InputDecoration(labelText: 'Email'),
                 validator: (val) {
                       if(val.isEmpty){
@@ -133,6 +130,7 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        backgroundColor: Color(0xFF296690),
         onPressed: () {
           _register();
         },
@@ -144,7 +142,7 @@ class _RegisterPageState extends State<RegisterPage> {
           onPressed: () {
             Navigator.of(context).pushNamed('/login');
           },
-          child: Text('Tengo una cuenta'),
+          child: Text('Tengo una cuenta', style: TextStyle(color: Colors.orange),),
 
         )
       ],
