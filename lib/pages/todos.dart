@@ -90,31 +90,31 @@ class MenuPrincipal extends StatelessWidget {
 List<MenuPrincipalItems> menuPrincipalItem = [
   MenuPrincipalItems(
     title: "Perfil",
-    icon: Icons.person,
+    icono: IconButton(icon: Icon(Icons.person), onPressed: (){},),
     colorBox: Colors.blue,
     colorIcon: Colors.white,
   ),
   MenuPrincipalItems(
     title: "Timeline",
-    icon: Icons.hourglass_full,
+    icono: IconButton(icon: Icon(Icons.hourglass_full), onPressed: (){},),
     colorBox: Colors.red,
     colorIcon: Colors.white,
   ),
   MenuPrincipalItems(
     title: "Fases",
-    icon: Icons.loop,
+    icono: IconButton(icon: Icon(Icons.loop), onPressed: (){},),
     colorBox: Colors.amber,
     colorIcon: Colors.white,
   ),
   MenuPrincipalItems(
     title: "Recordatorio",
-    icon: Icons.calendar_today,
+    icono: IconButton(icon: Icon(Icons.calendar_today), onPressed: (){},),
     colorBox: Colors.green,
     colorIcon: Colors.white,
   ),
   MenuPrincipalItems(
     title: "Contactos",
-    icon: Icons.contact_mail,
+    icono: IconButton(icon: Icon(Icons.contacts), onPressed: () {},),
     colorBox: Colors.purple,
     colorIcon: Colors.white,
   )
@@ -122,26 +122,41 @@ List<MenuPrincipalItems> menuPrincipalItem = [
 ];
 
 class MenuPrincipalItems extends StatelessWidget {
-  MenuPrincipalItems({this.title, this.icon, this.colorBox, this.colorIcon});
+  MenuPrincipalItems({this.title, this.icono, this.colorBox, this.colorIcon});
   final String title;
-  final IconData icon;
+  final IconButton icono;
   final Color colorBox, colorIcon;
+  
   @override
   Widget build(BuildContext context) {
     return Column(
       children: <Widget>[
-        Container(
-          width: 50.0,
-          height: 48.0,
-          decoration: BoxDecoration(
-            color: colorBox,
-            shape: BoxShape.circle,
-          ),
-          child: Icon(
-            icon,
-            color: colorIcon,
-          ),
+        Stack(
+          
+          
+          children: <Widget>[
+            Container(
+              margin: EdgeInsets.all(3.0),
+              width: 50.0,
+              height: 50.0,
+              decoration: BoxDecoration(
+                color: colorBox,
+                shape: BoxShape.circle,
+              ),
+              
+              // child: Icon(
+              //   icono,
+              //   color: colorIcon, */
+              // ),
+            ),
+            IconButton(
+              color: colorIcon,
+              icon: icono,
+              onPressed: (){},
+            ),
+          ],
         ),
+        
         Padding(
           padding: const EdgeInsets.only(top: 2.0),
           child: Text(
@@ -169,10 +184,7 @@ class MenuSecundario extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
               Column(
-                mainAxisAlignment: MainAxisAlignment.center,
                 mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                verticalDirection: VerticalDirection.down,
                 children: <Widget>[
                   Stack(
                     alignment: AlignmentDirectional.center,
@@ -187,7 +199,8 @@ class MenuSecundario extends StatelessWidget {
 
                         ),
                       ),
-                      Icon(Icons.lightbulb_outline, color: Colors.white, size: 32.0,),
+                      
+                      IconButton(icon: Icon(Icons.lightbulb_outline), onPressed: (){}, color: Colors.white, iconSize: 32,),
 
                     ],
                   ),
@@ -216,7 +229,7 @@ class MenuSecundario extends StatelessWidget {
 
                         ),
                       ),
-                      Icon(Icons.map, color: Colors.white, size: 28.0,),
+                      IconButton(icon: Icon(Icons.map), onPressed: (){}, color: Colors.white, iconSize: 28,),
 
                     ],
                   ),
@@ -250,7 +263,7 @@ class MenuSecundario extends StatelessWidget {
 
                         ),
                       ),
-                      Icon(Icons.book, color: Colors.white, size: 32.0,),
+                      IconButton(icon: Icon(Icons.book), onPressed: (){}, color: Colors.white, iconSize: 32,),
                     ],
                   ),
                   Text("Estudios"),
@@ -281,7 +294,7 @@ class MenuSecundario extends StatelessWidget {
 
                         ),
                       ),
-                      Icon(Icons.language, color: Colors.white, size: 32.0,),
+                      IconButton(icon: Icon(Icons.language), onPressed: (){}, color: Colors.white, iconSize: 32,),
 
                     ],
                   ),
@@ -310,7 +323,7 @@ class MenuSecundario extends StatelessWidget {
 
                         ),
                       ),
-                      Icon(Icons.translate, color: Colors.white, size: 32.0,),
+                      IconButton(icon: Icon(Icons.translate), onPressed: (){}, color: Colors.white, iconSize: 32,),
 
                     ],
                   ),
@@ -344,7 +357,7 @@ class MenuSecundario extends StatelessWidget {
 
                         ),
                       ),
-                      Icon(Icons.home, color: Colors.white, size: 32.0,),
+                      IconButton(icon: Icon(Icons.home), onPressed: (){}, color: Colors.white, iconSize: 32,),
                     ],
                   ),
                   Text("Compromiso"),
@@ -375,7 +388,7 @@ class MenuSecundario extends StatelessWidget {
 
                         ),
                       ),
-                      Icon(Icons.book, color: Colors.white, size: 32.0,),
+                      IconButton(icon: Icon(Icons.book), onPressed: (){}, color: Colors.white, iconSize: 32,),
 
                     ],
                   ),
@@ -404,7 +417,7 @@ class MenuSecundario extends StatelessWidget {
 
                         ),
                       ),
-                      Icon(Icons.assistant, color: Colors.white, size: 32.0,),
+                      IconButton(icon: Icon(Icons.assistant), onPressed: (){}, color: Colors.white, iconSize: 32,),
 
                     ],
                   ),
