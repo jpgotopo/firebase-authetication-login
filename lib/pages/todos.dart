@@ -57,7 +57,6 @@ class Profile extends StatelessWidget {
           alignment: AlignmentDirectional.center,
           children: <Widget>[
             Container(
-              
               height: 40.0,
               width: 90.0,
               decoration: BoxDecoration(
@@ -422,7 +421,8 @@ class MenuSecundario extends StatelessWidget {
                     ],
                   ),
                   Text("Orar, Ofrendar,"),
-                  Text("Movilizar")
+                  Text("Movilizar"),
+                  
 
                 ],
 
