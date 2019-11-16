@@ -74,7 +74,12 @@ class Profile extends StatelessWidget {
   }
 }
 
-class MenuPrincipal extends StatelessWidget {
+class MenuPrincipal extends StatefulWidget {
+  @override
+  _MenuPrincipalState createState() => _MenuPrincipalState();
+}
+
+class _MenuPrincipalState extends State<MenuPrincipal> {
   @override
   Widget build(BuildContext context) {
     return GridView.count(
@@ -84,7 +89,7 @@ class MenuPrincipal extends StatelessWidget {
     );
   }
 }
-
+List<String> pages = ['/profile', '/timeline', '/fases', '/recordatorio', '/contactos'];
 
 List<MenuPrincipalItems> menuPrincipalItem = [
   MenuPrincipalItems(
@@ -151,7 +156,7 @@ class MenuPrincipalItems extends StatelessWidget {
             IconButton(
               color: colorIcon,
               icon: icono,
-              onPressed: (){},
+              onPressed: () {}
             ),
           ],
         ),

@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:gpm_version_4/pages/settings.dart';
 import 'package:gpm_version_4/pages/todos.dart';
 import 'package:gpm_version_4/pages/todosArchive.dart';
+import 'package:gpm_version_4/screens/timeline.dart';
 
 class MainTabsPage extends StatelessWidget {
   @override
@@ -13,7 +14,7 @@ class MainTabsPage extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               TodosPage(),
-              TodosAchivePage(),
+              LineaTiempo(),
               SettingsPage(),
             ],
             

@@ -4,13 +4,15 @@ import 'package:gpm_version_4/pages/login.dart';
 import 'package:gpm_version_4/pages/mainTabs.dart';
 
 import 'package:gpm_version_4/pages/register.dart';
+import 'package:gpm_version_4/screens/profile_ind.dart';
 
 Map<String,WidgetBuilder> buildAppRoutes(){
   return{
     '/login'          : (BuildContext context) => LoginPage(),
     '/register'       : (BuildContext context) => RegisterPage(),
     '/forgotpassword' : (BuildContext context) => ForgotPasswordPage(),
-    '/maintabs'       : (BuildContext context) => MainTabsPage()
+    '/maintabs'       : (BuildContext context) => MainTabsPage(),
+    '/profile'        : (BuildContext context) => PerfilIndividual()
 
   };
 }
