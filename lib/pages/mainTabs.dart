@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:gpm_version_4/pages/settings.dart';
 import 'package:gpm_version_4/pages/todos.dart';
 import 'package:gpm_version_4/pages/todosArchive.dart';
+import 'package:gpm_version_4/screens/fases.dart';
 import 'package:gpm_version_4/screens/timeline.dart';
 import 'package:gpm_version_4/src/ui/calendarpage/calendarpage.dart';
 
@@ -15,7 +17,7 @@ class MainTabsPage extends StatelessWidget {
             children: <Widget>[
               TodosPage(),
               LineaTiempo(),
-              CalendarPage(),
+              PhasesGpm(),
             ],
             
           ),
