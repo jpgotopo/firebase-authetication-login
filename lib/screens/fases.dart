@@ -91,51 +91,107 @@ class BannerTitled extends StatelessWidget {
     );
   }
 }
-
+//Screen Secundario acerca de la Fase 1, a este Widget navegara el screen cuando de tap en Fase 1
 class InfoFase1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Column(
-      
-      children: <Widget>[
-        SizedBox(height: 32.0),
-        BannerTitled(
-          color: Color(0xFF0055FE),
-          texto: 'Fase 1',
-          ancho: 0.3
-        ),
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: Column(
+        
+          children: <Widget>[
+            SizedBox(height: 32.0),
+            Padding(
+              padding: const EdgeInsets.only(bottom:12.0),
+              child: BannerTitled(
+                color: Color(0xFF0055FE),
+                texto: 'Fase 1',
+                ancho: 0.3
+              ),
+            ),
+            DataInfo(
+              info: 'Tener pasión para servir \n como Misionero',
+            ),
+            
+            DataInfo(
+              info: 'Compromiso con el trabajo \n misionero de la iglesia local',
+            ),
+            DataInfo(
+              info: 'Iniciado en las reuniones \n mensuales de GPM regional',
+            ),
+            DataInfo(
+              info: 'Iniciado en las lecciones \n del curso Vamos',
+            ),
 
-      ],
+          ],
+        )
+      ),
     );
+    
   }
 }
 
-class DataInfo extends StatelessWidget {
+class DataInfo extends StatefulWidget {
+  DataInfo({Key key, this.info});
+  final String info;
+
+  
+  @override
+  _DataInfoState createState() => _DataInfoState();
+}
+
+class _DataInfoState extends State<DataInfo> {
+  _DataInfoState();
+  
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: <Widget>[
-        Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20.0),
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: <Color>[
-                Color(0xFF67cf44),
-                Color(0xFF00C6F9),
-                Color(0xFF00C6F9),
-                Color(0xFF67CF44),
-              ],
-            ),
-          )
-        ),
-        Row(
+    
+    bool marcado1 = false;
+    
+    return Center(
+      child: Stack(
+        alignment: Alignment.center,
           children: <Widget>[
             
+            Container(
+              
+              padding: EdgeInsets.all(10.0),
+              height: 73.0,
+              width: 300.0,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20.0),
+                gradient: LinearGradient(
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                  colors: <Color>[
+                    Color(0xFF67cf44),
+                    Color(0xFF00C6F9),
+                    Color(0xFF00C6F9),
+                    Color(0xFF67CF44),
+                  ],
+                ),
+              )
+            ),
+            Row(
+              
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: <Widget>[
+                Checkbox(
+                  value: marcado1,
+                  onChanged: (bool value) {
+                    setState((){
+                      marcado1 = !value;
+                    });
+                  },
+                ),
+                Text(widget.info, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+              ],
+            ),
+            
           ],
-        )
-      ],
+        ),
+      
     );
   }
 }
