@@ -8,7 +8,9 @@ class ScreenPhases extends StatelessWidget {
       routes: <String, WidgetBuilder>{
         '/screen1': (BuildContext context) => PhasesGpm(),
         '/screen2': (BuildContext context) => InfoFase1(),
-        //TODO terminar las rutas
+        '/screen3': (BuildContext context) => InfoFase2(),
+        '/screen4': (BuildContext context) => InfoFase3(),
+        
       },
     );
   }
@@ -29,7 +31,7 @@ class PhasesGpm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
           
             children: <Widget>[
-              
+              //TODO: implementar GestureDetector()
               BannerTitled(
                 color: Color(0xFFFE9000),
                 texto: 'Fases',
@@ -152,12 +154,12 @@ class InfoFase2 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
-        child: Column(
+        child: ListView(
         
           children: <Widget>[
             SizedBox(height: 32.0),
             Padding(
-              padding: const EdgeInsets.only(bottom:12.0),
+              padding: const EdgeInsets.only(bottom:3.0),
               child: BannerTitled(
                 color: Color(0xFFFE7700),
                 texto: 'Fase 2',
@@ -167,11 +169,69 @@ class InfoFase2 extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(10),
             ),
-            ListView(),
+            
             DataInfo(
               info: 'Tener claro el llamado misionero',
             ),
             
+            DataInfo(
+              info: 'Tener claro el lugar del llamado \nmisionero',
+            ),
+            DataInfo(
+              info: 'Participar activamente del  GPM \nRegional',
+            ),
+            DataInfo(
+              info: 'Participar activamente de \n las clases del Manual Vamos',
+            ),
+            DataInfo(
+              info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
+            ),
+
+          ],
+        )
+      ),
+    );
+  }
+}
+
+class InfoFase3 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: ListView(
+        
+          children: <Widget>[
+            SizedBox(height: 32.0),
+            Padding(
+              padding: const EdgeInsets.only(bottom:3.0),
+              child: BannerTitled(
+                color: Color(0xFFFE0034),
+                texto: 'Fase 3',
+                ancho: 0.3
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+            ),
+            
+            DataInfo(
+              info: 'Tener claro el llamado misionero',
+            ),
+            
+            DataInfo(
+              info: 'Tener claro el lugar del llamado \nmisionero',
+            ),
+            DataInfo(
+              info: 'Participar activamente del  GPM \nRegional',
+            ),
+            DataInfo(
+              info: 'Participar activamente de \n las clases del Manual Vamos',
+            ),
+            DataInfo(
+              info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
+            ),
             DataInfo(
               info: 'Tener claro el lugar del llamado \nmisionero',
             ),

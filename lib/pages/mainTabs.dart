@@ -17,7 +17,7 @@ class MainTabsPage extends StatelessWidget {
             children: <Widget>[
               TodosPage(),
               LineaTiempo(),
-              InfoFase2()
+              InfoFase3()
               //PhasesGpm(),
             ],
             
