@@ -1,5 +1,18 @@
 import 'package:flutter/material.dart';
 
+class ScreenPhases extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: PhasesGpm(),
+      routes: <String, WidgetBuilder>{
+        '/screen1': (BuildContext context) => PhasesGpm(),
+        '/screen2': (BuildContext context) => InfoFase1(),
+        //TODO terminar las rutas
+      },
+    );
+  }
+}
 class PhasesGpm extends StatelessWidget {
   
   @override
@@ -16,6 +29,7 @@ class PhasesGpm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
           
             children: <Widget>[
+              
               BannerTitled(
                 color: Color(0xFFFE9000),
                 texto: 'Fases',
@@ -43,15 +57,12 @@ class PhasesGpm extends StatelessWidget {
         
       )
     );
-    
-    
-
-    
-      
-    
+ 
   }
 
 }
+
+
 
 class BannerTitled extends StatelessWidget {
   BannerTitled({this.color, this.texto, this.ancho});
@@ -110,6 +121,9 @@ class InfoFase1 extends StatelessWidget {
                 ancho: 0.3
               ),
             ),
+            Padding(
+              padding: EdgeInsets.all(10),
+            ),
             DataInfo(
               info: 'Tener pasión para servir \n como Misionero',
             ),
@@ -132,6 +146,52 @@ class InfoFase1 extends StatelessWidget {
   }
 }
 
+class InfoFase2 extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Center(
+        child: Column(
+        
+          children: <Widget>[
+            SizedBox(height: 32.0),
+            Padding(
+              padding: const EdgeInsets.only(bottom:12.0),
+              child: BannerTitled(
+                color: Color(0xFFFE7700),
+                texto: 'Fase 2',
+                ancho: 0.3
+              ),
+            ),
+            Padding(
+              padding: EdgeInsets.all(10),
+            ),
+            ListView(),
+            DataInfo(
+              info: 'Tener claro el llamado misionero',
+            ),
+            
+            DataInfo(
+              info: 'Tener claro el lugar del llamado \nmisionero',
+            ),
+            DataInfo(
+              info: 'Participar activamente del  GPM \nRegional',
+            ),
+            DataInfo(
+              info: 'Participar activamente de \n las clases del Manual Vamos',
+            ),
+            DataInfo(
+              info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
+            ),
+
+          ],
+        )
+      ),
+    );
+  }
+}
+
 class DataInfo extends StatefulWidget {
   DataInfo({Key key, this.info});
   final String info;
@@ -147,50 +207,62 @@ class _DataInfoState extends State<DataInfo> {
   @override
   Widget build(BuildContext context) {
     
-    bool marcado1 = false;
-    
-    return Center(
-      child: Stack(
-        alignment: Alignment.center,
-          children: <Widget>[
-            
-            Container(
-              
-              padding: EdgeInsets.all(10.0),
-              height: 73.0,
-              width: 300.0,
-              decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20.0),
-                gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: <Color>[
-                    Color(0xFF67cf44),
-                    Color(0xFF00C6F9),
-                    Color(0xFF00C6F9),
-                    Color(0xFF67CF44),
-                  ],
-                ),
-              )
-            ),
-            Row(
-              
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                Checkbox(
-                  value: marcado1,
-                  onChanged: (bool value) {
-                    setState((){
-                      marcado1 = !value;
-                    });
-                  },
-                ),
-                Text(widget.info, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+    //bool _marcado1 = false;
+    bool isSwitched = true;
+    return Material(
+      
+      child: Padding(
+        padding: const EdgeInsets.all(4.0),
+        child: Container(
+          child: Row(
+          
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              /* Checkbox(
+                value: _marcado1,
+                onChanged: (bool valor) {
+                  setState((){
+                    _marcado1 = valor;
+                  });
+                },
+              ), */
+              Switch(
+                value: isSwitched,
+                onChanged: (value) {
+                  setState(() {
+                    isSwitched = value;
+                  });
+                },
+                activeTrackColor: Colors.lightGreenAccent, 
+                activeColor: Colors.green[500],
+              ),
+              Text(widget.info, style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500)),
+            ],
+          ),
+          //padding: EdgeInsets.all(10.0),
+          
+          height: 73.0,
+          width: 300.0,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.0),
+            gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: <Color>[
+                Color(0xFF99ebb4),
+                Color(0xFF00C6F9),
+                Color(0xFF00C6F9),
+                
               ],
             ),
-            
-          ],
+          )
         ),
+      ),
+            
+            
+            
+          
+        
       
     );
   }
