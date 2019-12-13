@@ -37,22 +37,46 @@ class PhasesGpm extends StatelessWidget {
                 texto: 'Fases',
                 ancho: 0.8
               ),
+              /* RaisedButton(
+                
+                child: Container(
+                  height: media.height *0.075,
+                  width: media.width * .3,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(10.0),
+                    color: Color(0xFF0055FE),
+                  ),
+                  child: Text('Fase 1', style: TextStyle(color:Colors.white)),
+                ),
+                onPressed: (){Navigator.of(context).pushNamed('screen2');},
+              ), */
               SizedBox(height: 60.0),
-              BannerTitled(
+              GestureDetector(
+                onTap: ()=> Navigator.of(context).pushNamed('/screen2'),
+                //TODO implementar onTap para Fase 1, 2 y 3
+                child: BannerTitled(
                 color: Color(0xFF0055FE),
                 texto: 'Fase 1',
                 ancho: 0.3
+                ),
               ),
-              BannerTitled(
-                color: Color(0xFFFE7700),
-                texto: 'Fase 2',
-                ancho: 0.4
+              GestureDetector(
+                onTap: ()=> Navigator.of(context).pushNamed('/screen3'),
+                child: BannerTitled(
+                  color: Color(0xFFFE7700),
+                  texto: 'Fase 2',
+                  ancho: 0.4
+                ),
               ),
-              BannerTitled(
-                color: Color(0xFFFE0034),
-                texto: 'Fase 3',
-                ancho: 0.6
+              GestureDetector(
+                onTap: ()=> Navigator.of(context).pushNamed('/screen4'),
+                child: BannerTitled(
+                  color: Color(0xFFFE0034),
+                  texto: 'Fase 3',
+                  ancho: 0.6
+                ),
               ),
+              
               
             ],
           ),
@@ -126,19 +150,34 @@ class InfoFase1 extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(10),
             ),
-            DataInfo(
-              info: 'Tener pasión para servir \n como Misionero',
+            Container(
+              height: 350.0,
+              child: ListView(
+                children: <Widget>[
+                  DataInfo(
+                    info: 'Tener pasión para servir \n como Misionero',
+                  ),
+                  DataInfo(
+                    info: 'Compromiso con el trabajo \n misionero de la iglesia local',
+                  ),
+                  DataInfo(
+                    info: 'Iniciado en las reuniones \n mensuales de GPM regional',
+                  ),
+                  DataInfo(
+                    info: 'Iniciado en las lecciones \n del curso Vamos',
+                  ),
+                ]
+              ),
             ),
-            
-            DataInfo(
-              info: 'Compromiso con el trabajo \n misionero de la iglesia local',
-            ),
-            DataInfo(
-              info: 'Iniciado en las reuniones \n mensuales de GPM regional',
-            ),
-            DataInfo(
-              info: 'Iniciado en las lecciones \n del curso Vamos',
-            ),
+             Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FloatingActionButton(
+                child: Icon( Icons.arrow_back ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),  
 
           ],
         )
@@ -154,7 +193,7 @@ class InfoFase2 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
-        child: ListView(
+        child: Column(
         
           children: <Widget>[
             SizedBox(height: 32.0),
@@ -169,26 +208,41 @@ class InfoFase2 extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(10),
             ),
-            
-            DataInfo(
-              info: 'Tener claro el llamado misionero',
+            Container(
+              height: 350.0,
+              child: ListView(
+                children: <Widget>[
+                  DataInfo(
+                    info: 'Tener claro el llamado misionero',
+                  ),
+                  
+                  DataInfo(
+                    info: 'Tener claro el lugar del llamado \nmisionero',
+                  ),
+                  DataInfo(
+                    info: 'Participar activamente del  GPM \nRegional',
+                  ),
+                  DataInfo(
+                    info: 'Participar activamente de \n las clases del Manual Vamos',
+                  ),
+                  DataInfo(
+                    info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
+                  ),
+                ],
+              ),
             ),
-            
-            DataInfo(
-              info: 'Tener claro el lugar del llamado \nmisionero',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FloatingActionButton(
+                child: Icon( Icons.arrow_back ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
             ),
-            DataInfo(
-              info: 'Participar activamente del  GPM \nRegional',
-            ),
-            DataInfo(
-              info: 'Participar activamente de \n las clases del Manual Vamos',
-            ),
-            DataInfo(
-              info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
-            ),
-
           ],
-        )
+        ),
+        
       ),
     );
   }
@@ -200,7 +254,7 @@ class InfoFase3 extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Center(
-        child: ListView(
+        child: Column(
         
           children: <Widget>[
             SizedBox(height: 32.0),
@@ -215,40 +269,60 @@ class InfoFase3 extends StatelessWidget {
             Padding(
               padding: EdgeInsets.all(10),
             ),
-            
-            DataInfo(
-              info: 'Tener claro el llamado misionero',
+            Container(
+              height: 350.0,
+              child: ListView(
+                children: <Widget>[
+                  DataInfo(
+                    info: 'Tener claro el llamado misionero',
+                  ),
+                  
+                  DataInfo(
+                    info: 'Tener claro el lugar del llamado \nmisionero',
+                  ),
+                  DataInfo(
+                    info: 'Haber terminado o estar por \nconcluir estudios teológicos',
+                  ),
+                  DataInfo(
+                    info: 'Haber terminado o estar por \nconcluir estudios transculturales',
+                  ),
+                  DataInfo(
+                    info: 'Haber terminado o estar por \nconcluir estudios de Inglés',
+                  ),
+                  DataInfo(
+                    info: 'Estar comprometido con el trabajo \n misionero de su iglesia local',
+                  ),
+                  DataInfo(
+                    info: 'Participar activamente mínimo \n2 años del  GPM Regional',
+                  ),
+                  DataInfo(
+                    info: 'Haber terminado o estar por concluir\n las clases del Manual Vamos',
+                  ),
+                  DataInfo(
+                    info: 'Haber asistido a un retiro GPM Nacional',
+                  ),
+                  DataInfo(
+                    info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
+                  ),
+                ],
+
+              ),
             ),
             
-            DataInfo(
-              info: 'Tener claro el lugar del llamado \nmisionero',
-            ),
-            DataInfo(
-              info: 'Participar activamente del  GPM \nRegional',
-            ),
-            DataInfo(
-              info: 'Participar activamente de \n las clases del Manual Vamos',
-            ),
-            DataInfo(
-              info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
-            ),
-            DataInfo(
-              info: 'Tener claro el lugar del llamado \nmisionero',
-            ),
-            DataInfo(
-              info: 'Participar activamente del  GPM \nRegional',
-            ),
-            DataInfo(
-              info: 'Participar activamente de \n las clases del Manual Vamos',
-            ),
-            DataInfo(
-              info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FloatingActionButton(
+                child: Icon( Icons.arrow_back ),
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/screen1');
+                },
+              ),
             ),
 
           ],
-        )
+        
       ),
-    );
+    ));
   }
 }
 

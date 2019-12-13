@@ -1,5 +1,33 @@
 import 'package:flutter/material.dart';
-
+import 'package:gpm_version_4/pages/settings.dart';
+import 'package:gpm_version_4/screens/fases.dart';
+import 'package:gpm_version_4/screens/profile_ind.dart';
+import 'package:gpm_version_4/screens/timeline.dart';
+class RutasIconos extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      home: TodosPage(),
+      routes: <String, WidgetBuilder>{
+        //Rutas iconos menu principal
+        '/screen1': (BuildContext context) => TodosPage(),
+        '/screen2': (BuildContext context) => PerfilIndividual(),
+        '/screen3': (BuildContext context) => LineaTiempo(),
+        '/screen4': (BuildContext context) => ScreenPhases(),
+        '/screen5': (BuildContext context) => SettingsPage(), //TODO terminar de corregir Calendario,
+        //Rutas íconos menú secundario
+        '/screen6': (BuildContext context) => ScreenPhases(),
+        '/screen7': (BuildContext context) => ScreenPhases(),
+        '/screen8': (BuildContext context) => ScreenPhases(),
+        '/screen9': (BuildContext context) => ScreenPhases(),
+        '/screen10': (BuildContext context) => ScreenPhases(),
+        '/screen11': (BuildContext context) => ScreenPhases(),
+        '/screen12': (BuildContext context) => ScreenPhases(),
+        '/screen13': (BuildContext context) => ScreenPhases(),
+      },
+    );
+  }
+}
 class TodosPage extends StatefulWidget {
   @override
   _TodosPageState createState() => _TodosPageState();
@@ -50,9 +78,9 @@ class Profile extends StatelessWidget {
         ),
         title: Text(
           "Jean Paul Gotopo",
-          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 14),
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
-        subtitle: Text("Lima Centro", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 9)),
+        subtitle: Text("Lima Centro", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 11)),
         trailing: Stack(
           alignment: AlignmentDirectional.center,
           children: <Widget>[
@@ -82,6 +110,39 @@ class MenuPrincipal extends StatefulWidget {
 class _MenuPrincipalState extends State<MenuPrincipal> {
   @override
   Widget build(BuildContext context) {
+    List<MenuPrincipalItems> menuPrincipalItem = [
+      MenuPrincipalItems(
+        title: "Perfil",
+        icono: IconButton(icon: Icon(Icons.person), onPressed: (){Navigator.of(context).pushNamed('/screen2');},),
+        colorBox: Colors.blue,
+        colorIcon: Colors.white,
+      ),
+      MenuPrincipalItems(
+        title: "Timeline",
+        icono: IconButton(icon: Icon(Icons.hourglass_full), onPressed: (){Navigator.of(context).pushNamed('/screen3');},),
+        colorBox: Colors.red,
+        colorIcon: Colors.white,
+      ),
+      MenuPrincipalItems(
+        title: "Fases",
+        icono: IconButton(icon: Icon(Icons.loop), onPressed: (){},),
+        colorBox: Colors.amber,
+        colorIcon: Colors.white,
+      ),
+      MenuPrincipalItems(
+        title: "Recordatorio",
+        icono: IconButton(icon: Icon(Icons.calendar_today), onPressed: (){},),
+        colorBox: Colors.green,
+        colorIcon: Colors.white,
+      ),
+      MenuPrincipalItems(
+        title: "Contactos",
+        icono: IconButton(icon: Icon(Icons.contacts), onPressed: () {},),
+        colorBox: Colors.purple,
+        colorIcon: Colors.white,
+      )
+
+  ];
     return GridView.count(
       shrinkWrap: true,
       crossAxisCount: 5,
@@ -89,41 +150,8 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     );
   }
 }
-List<String> pages = ['/profile', '/timeline', '/fases', '/recordatorio', '/contactos'];
+//List<String> pages = ['/profile', '/timeline', '/fases', '/recordatorio', '/contactos'];
 
-List<MenuPrincipalItems> menuPrincipalItem = [
-  MenuPrincipalItems(
-    title: "Perfil",
-    icono: IconButton(icon: Icon(Icons.person), onPressed: (){},),
-    colorBox: Colors.blue,
-    colorIcon: Colors.white,
-  ),
-  MenuPrincipalItems(
-    title: "Timeline",
-    icono: IconButton(icon: Icon(Icons.hourglass_full), onPressed: (){},),
-    colorBox: Colors.red,
-    colorIcon: Colors.white,
-  ),
-  MenuPrincipalItems(
-    title: "Fases",
-    icono: IconButton(icon: Icon(Icons.loop), onPressed: (){},),
-    colorBox: Colors.amber,
-    colorIcon: Colors.white,
-  ),
-  MenuPrincipalItems(
-    title: "Recordatorio",
-    icono: IconButton(icon: Icon(Icons.calendar_today), onPressed: (){},),
-    colorBox: Colors.green,
-    colorIcon: Colors.white,
-  ),
-  MenuPrincipalItems(
-    title: "Contactos",
-    icono: IconButton(icon: Icon(Icons.contacts), onPressed: () {},),
-    colorBox: Colors.purple,
-    colorIcon: Colors.white,
-  )
-
-];
 
 class MenuPrincipalItems extends StatelessWidget {
   MenuPrincipalItems({this.title, this.icono, this.colorBox, this.colorIcon});
