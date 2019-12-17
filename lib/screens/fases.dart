@@ -31,7 +31,7 @@ class PhasesGpm extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.start,
           
             children: <Widget>[
-              //TODO: implementar GestureDetector()
+              
               BannerTitled(
                 color: Color(0xFFFE9000),
                 texto: 'Fases',
