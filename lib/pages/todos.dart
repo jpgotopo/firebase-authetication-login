@@ -6,7 +6,7 @@ import 'package:gpm_version_4/screens/fases.dart';
 import 'package:gpm_version_4/screens/profile_ind.dart';
 import 'package:gpm_version_4/screens/timeline.dart';
 import 'package:gpm_version_4/screens/transcultural.dart';
-class PrincipalScreen extends StatelessWidget {
+/* class PrincipalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
@@ -31,7 +31,9 @@ class PrincipalScreen extends StatelessWidget {
       },
     );
   }
-}
+  
+} */
+//TODO colocar rutas en routes.dart y enlazar con dicho archivo
 class TodosPage extends StatefulWidget {
   @override
   _TodosPageState createState() => _TodosPageState();
@@ -207,46 +209,21 @@ class MenuSecundario extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Column(
-                mainAxisSize: MainAxisSize.max,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: FloatingActionButton(
-                      child: Icon(Icons.lightbulb_outline, size: 32,),
-                      backgroundColor: Colors.amber,
-                      onPressed: () {
-                        
-                      },
-                    ),
-                  ),
-                  Text("Claridad en "),
-                  Text("el Llamado")
-
-                ],
-
+              
+              WholeIcon(
+                trayecto: null,
+                iconow: Icon(Icons.lightbulb_outline, size: 32,),
+                linea1: 'Claridad en',
+                linea2: 'el Llamado',
+                colorw: Colors.amber,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                verticalDirection: VerticalDirection.down,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: FloatingActionButton(
-                      child: Icon(Icons.map, size: 32,),
-                      backgroundColor: Colors.red,
-                      onPressed: () {
-                        
-                      },
-                    ),
-                  ),
-                  Text("Lugar del"),
-                  Text("Llamado")
-
-                ],
-
+              
+              WholeIcon(
+                trayecto: null,
+                iconow: Icon(Icons.map, size: 32,),
+                linea1: 'Lugal del',
+                linea2: 'Llamado',
+                colorw: Colors.red,
               ),
 
             ],
@@ -255,73 +232,34 @@ class MenuSecundario extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: FloatingActionButton(
-                      child: Icon(Icons.book, size: 32,),
-                      backgroundColor: Colors.blue,
-                      onPressed: () {
-                        
-                      },
-                    ),
-                  ),
-                  Text("Estudios"),
-                  Text("Teológicos"),
-                ],
-              )
+              
+              WholeIcon(
+                trayecto: null,
+                iconow: Icon(Icons.book, size: 32,),
+                linea1: 'Estudios',
+                linea2: 'Teológicos',
+                colorw: Colors.blue,
+              ),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                verticalDirection: VerticalDirection.down,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: FloatingActionButton(
-                      child: Icon(Icons.language, size: 32,),
-                      backgroundColor: Colors.green,
-                      onPressed: () {
-                        
-                      },
-                    ),
-                  ),
-                  Text("Estudios"),
-                  Text("Transculturales"),
-
-                ],
-
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                verticalDirection: VerticalDirection.down,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: FloatingActionButton(
-                      child: Icon(Icons.translate),
-                      backgroundColor: Colors.orange,
-                      onPressed: () {
-                        
-                      },
-                    ),
-                  ),
-                  Text("Idioma"),
-                  Text("       ")
-
-                ],
-
-              ),
+              
+              WholeIcon(
+                trayecto: null,
+                iconow: Icon(Icons.language, size: 32,),
+                linea1: 'Estudios',
+                linea2: 'Transculturales',
+                colorw: Colors.green,
+              ),              
+              WholeIcon(
+                trayecto: null,
+                iconow: Icon(Icons.translate, size: 32,),
+                linea1: 'Avance en',
+                linea2: 'el Idioma',
+                colorw: Colors.orange,
+              )
 
             ],
           ),
@@ -329,24 +267,7 @@ class MenuSecundario extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              /* Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: <Widget>[
-                  Padding(
-                    padding: const EdgeInsets.all(1.0),
-                    child: FloatingActionButton(
-                      child: Icon(Icons.home, size: 32),
-                      backgroundColor: Colors.amber,
-                      onPressed: () {
-                        
-                      },
-                    ),
-                  ),
-                  Text("Compromiso"),
-                  Text("Iglesia Local"),
-                ],
-              ) */
+              
               WholeIcon(
                 trayecto: vamos,
                 iconow: Icon(Icons.home),
