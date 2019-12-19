@@ -23,6 +23,7 @@ class MainTabsPage extends StatelessWidget {
               //MyApp()
               //PhasesGpm(),
               CursoVamos()
+              //ScreenPhases()
             ],
             
           ),

@@ -1,29 +1,33 @@
 import 'package:flutter/material.dart';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:gpm_version_4/pages/settings.dart';
+import 'package:gpm_version_4/screens/curso_vamos.dart';
 import 'package:gpm_version_4/screens/fases.dart';
 import 'package:gpm_version_4/screens/profile_ind.dart';
 import 'package:gpm_version_4/screens/timeline.dart';
-class RutasIconos extends StatelessWidget {
+import 'package:gpm_version_4/screens/transcultural.dart';
+class PrincipalScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      initialRoute: '/',
       home: TodosPage(),
       routes: <String, WidgetBuilder>{
         //Rutas iconos menu principal
-        '/screen1': (BuildContext context) => TodosPage(),
-        '/screen2': (BuildContext context) => PerfilIndividual(),
-        '/screen3': (BuildContext context) => LineaTiempo(),
-        '/screen4': (BuildContext context) => ScreenPhases(),
-        '/screen5': (BuildContext context) => SettingsPage(), //TODO terminar de corregir Calendario,
+        '/': (context) => TodosPage(),
+        '/screen2': (context) => PerfilIndividual(),
+        '/screen3': (context) => LineaTiempo(),
+        '/screen4': (context) => ScreenPhases(),
+        '/screen5': (context) => SettingsPage(), //TODO terminar de corregir Calendario,
         //Rutas íconos menú secundario
-        '/screen6': (BuildContext context) => ScreenPhases(),
-        '/screen7': (BuildContext context) => ScreenPhases(),
-        '/screen8': (BuildContext context) => ScreenPhases(),
-        '/screen9': (BuildContext context) => ScreenPhases(),
-        '/screen10': (BuildContext context) => ScreenPhases(),
-        '/screen11': (BuildContext context) => ScreenPhases(),
-        '/screen12': (BuildContext context) => ScreenPhases(),
-        '/screen13': (BuildContext context) => ScreenPhases(),
+        '/screen6': (context) => ScreenPhases(),
+        '/screen7': (context) => ScreenPhases(),
+        '/screen8': (context) => ScreenPhases(),
+        '/screen9': (context) => ScreenPhases(),
+        '/screen10': (context) => MyApp(),
+        '/screen11': (context) => ScreenPhases(),
+        '/screen12': (context) => ScreenPhases(),
+        '/screen13': (context) => ScreenPhases(),
       },
     );
   }
@@ -110,10 +114,12 @@ class MenuPrincipal extends StatefulWidget {
 class _MenuPrincipalState extends State<MenuPrincipal> {
   @override
   Widget build(BuildContext context) {
+    
+    
     List<MenuPrincipalItems> menuPrincipalItem = [
       MenuPrincipalItems(
         title: "Perfil",
-        icono: IconButton(icon: Icon(Icons.person), onPressed: (){Navigator.of(context).pushNamed('/screen2');},),
+        icono: IconButton(icon: Icon(Icons.person), onPressed: () => Navigator.pushNamed(context, '/screen2')),
         colorBox: Colors.blue,
         colorIcon: Colors.white,
       ),
@@ -151,44 +157,27 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
   }
 }
 //List<String> pages = ['/profile', '/timeline', '/fases', '/recordatorio', '/contactos'];
-
-
 class MenuPrincipalItems extends StatelessWidget {
   MenuPrincipalItems({this.title, this.icono, this.colorBox, this.colorIcon});
   final String title;
-  final IconButton icono;
+  final IconButton icono; //TODO cambiar tipo de variable icono por Icon, guardar funcion del onPressed en una variable
   final Color colorBox, colorIcon;
   
   @override
   Widget build(BuildContext context) {
+    Route transcultural = MaterialPageRoute(builder: (context)=>MyApp());
     return Column(
       children: <Widget>[
-        Stack(
-          
-          
-          children: <Widget>[
-            Container(
-              margin: EdgeInsets.all(3.0),
-              width: 50.0,
-              height: 50.0,
-              decoration: BoxDecoration(
-                color: colorBox,
-                shape: BoxShape.circle,
-              ),
+        Padding(
+          padding: const EdgeInsets.all(1.0),
+          child: FloatingActionButton(
+            child: icono,
+            backgroundColor: colorBox,
+            onPressed: () {
               
-              // child: Icon(
-              //   icono,
-              //   color: colorIcon, */
-              // ),
-            ),
-            IconButton(
-              color: colorIcon,
-              icon: icono,
-              onPressed: () {}
-            ),
-          ],
+            },
+          ),
         ),
-        
         Padding(
           padding: const EdgeInsets.only(top: 2.0),
           child: Text(
@@ -207,6 +196,9 @@ class MenuPrincipalItems extends StatelessWidget {
 class MenuSecundario extends StatelessWidget {
 
   Widget build(BuildContext context) {
+    Route todos = MaterialPageRoute(builder: (context)=>TodosPage());
+    Route transcultural = MaterialPageRoute(builder: (context)=>MyApp());
+    Route vamos = MaterialPageRoute(builder: (context)=>CursoVamos());
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10.0),
 
@@ -218,23 +210,15 @@ class MenuSecundario extends StatelessWidget {
               Column(
                 mainAxisSize: MainAxisSize.max,
                 children: <Widget>[
-                  Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        width: 45.0,
-                        decoration: BoxDecoration(
-                          color: Colors.amber,
-                          shape: BoxShape.circle,
-
-
-                        ),
-                      ),
-                      
-                      IconButton(icon: Icon(Icons.lightbulb_outline), onPressed: (){}, color: Colors.white, iconSize: 32,),
-
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: FloatingActionButton(
+                      child: Icon(Icons.lightbulb_outline, size: 32,),
+                      backgroundColor: Colors.amber,
+                      onPressed: () {
+                        
+                      },
+                    ),
                   ),
                   Text("Claridad en "),
                   Text("el Llamado")
@@ -248,22 +232,15 @@ class MenuSecundario extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 verticalDirection: VerticalDirection.down,
                 children: <Widget>[
-                  Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        width: 45.0,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
-
-
-                        ),
-                      ),
-                      IconButton(icon: Icon(Icons.map), onPressed: (){}, color: Colors.white, iconSize: 28,),
-
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: FloatingActionButton(
+                      child: Icon(Icons.map, size: 32,),
+                      backgroundColor: Colors.red,
+                      onPressed: () {
+                        
+                      },
+                    ),
                   ),
                   Text("Lugar del"),
                   Text("Llamado")
@@ -282,21 +259,15 @@ class MenuSecundario extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        width: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          shape: BoxShape.circle,
-
-
-                        ),
-                      ),
-                      IconButton(icon: Icon(Icons.book), onPressed: (){}, color: Colors.white, iconSize: 32,),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: FloatingActionButton(
+                      child: Icon(Icons.book, size: 32,),
+                      backgroundColor: Colors.blue,
+                      onPressed: () {
+                        
+                      },
+                    ),
                   ),
                   Text("Estudios"),
                   Text("Teológicos"),
@@ -313,22 +284,15 @@ class MenuSecundario extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 verticalDirection: VerticalDirection.down,
                 children: <Widget>[
-                  Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        width: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.green,
-                          shape: BoxShape.circle,
-
-
-                        ),
-                      ),
-                      IconButton(icon: Icon(Icons.language), onPressed: (){}, color: Colors.white, iconSize: 32,),
-
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: FloatingActionButton(
+                      child: Icon(Icons.language, size: 32,),
+                      backgroundColor: Colors.green,
+                      onPressed: () {
+                        
+                      },
+                    ),
                   ),
                   Text("Estudios"),
                   Text("Transculturales"),
@@ -342,22 +306,15 @@ class MenuSecundario extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.center,
                 verticalDirection: VerticalDirection.down,
                 children: <Widget>[
-                  Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        width: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.orange,
-                          shape: BoxShape.circle,
-
-
-                        ),
-                      ),
-                      IconButton(icon: Icon(Icons.translate), onPressed: (){}, color: Colors.white, iconSize: 32,),
-
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: FloatingActionButton(
+                      child: Icon(Icons.translate),
+                      backgroundColor: Colors.orange,
+                      onPressed: () {
+                        
+                      },
+                    ),
                   ),
                   Text("Idioma"),
                   Text("       ")
@@ -372,100 +329,91 @@ class MenuSecundario extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center,
             children: <Widget>[
-              Column(
+              /* Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: <Widget>[
-                  Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        width: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.amber[700],
-                          shape: BoxShape.circle,
-
-
-                        ),
-                      ),
-                      IconButton(icon: Icon(Icons.home), onPressed: (){}, color: Colors.white, iconSize: 32,),
-                    ],
+                  Padding(
+                    padding: const EdgeInsets.all(1.0),
+                    child: FloatingActionButton(
+                      child: Icon(Icons.home, size: 32),
+                      backgroundColor: Colors.amber,
+                      onPressed: () {
+                        
+                      },
+                    ),
                   ),
                   Text("Compromiso"),
                   Text("Iglesia Local"),
                 ],
+              ) */
+              WholeIcon(
+                trayecto: vamos,
+                iconow: Icon(Icons.home),
+                linea1: 'Compromiso',
+                linea2: 'Iglesia Local',
+                colorw: Colors.amber,
               )
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: <Widget>[
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                verticalDirection: VerticalDirection.down,
-                children: <Widget>[
-                  Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        width: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.red,
-                          shape: BoxShape.circle,
-
-
-                        ),
-                      ),
-                      IconButton(icon: Icon(Icons.book), onPressed: (){}, color: Colors.white, iconSize: 32,),
-
-                    ],
-                  ),
-                  Text("Manual"),
-                  Text("Vamos"),
-
-                ],
-
+             
+              WholeIcon(
+                trayecto: vamos,
+                iconow: Icon(Icons.book, size: 32,),
+                linea1: 'Manual',
+                linea2: 'Vamos',
+                colorw: Colors.red,
               ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                mainAxisSize: MainAxisSize.max,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                verticalDirection: VerticalDirection.down,
-                children: <Widget>[
-                  Stack(
-                    alignment: AlignmentDirectional.center,
-                    children: <Widget>[
-                      Container(
-                        height: 50.0,
-                        width: 50.0,
-                        decoration: BoxDecoration(
-                          color: Colors.blue,
-                          shape: BoxShape.circle,
-
-
-                        ),
-                      ),
-                      IconButton(icon: Icon(Icons.assistant), onPressed: (){}, color: Colors.white, iconSize: 32,),
-
-                    ],
-                  ),
-                  Text("Orar, Ofrendar,"),
-                  Text("Movilizar"),
-                  
-
-                ],
-
-              ),
+              WholeIcon(
+                trayecto: transcultural,
+                iconow: Icon(Icons.assistant, size: 32,),
+                linea1: 'Orar, Ofrendar',
+                colorw: Colors.blue,
+                linea2: 'Movilizar',
+              )
 
             ],
           ),
 
         ],
       ),
+    );
+  }
+  
+}
+
+class WholeIcon extends StatelessWidget {
+  WholeIcon({@required this.iconow, @required  this.colorw, @required  this.trayecto, @required this.linea1, this.linea2});
+  final Icon iconow;
+  final Color colorw;
+  final Route trayecto;
+  final String linea1;
+  final String linea2;
+  
+  @override
+  Widget build(BuildContext context) {
+    
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: <Widget>[
+        Padding(
+          padding: const EdgeInsets.all(1.0),
+          child: FloatingActionButton(
+            child: iconow,
+            backgroundColor: colorw,
+            onPressed: () {
+              Navigator.push(context, trayecto);
+            },
+          ),
+        ),
+        Text(linea1),
+        Text(linea2),
+
+      ],
     );
   }
 }

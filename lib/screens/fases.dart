@@ -53,7 +53,6 @@ class PhasesGpm extends StatelessWidget {
               SizedBox(height: 60.0),
               GestureDetector(
                 onTap: ()=> Navigator.of(context).pushNamed('/screen2'),
-                //TODO implementar onTap para Fase 1, 2 y 3
                 child: BannerTitled(
                 color: Color(0xFF0055FE),
                 texto: 'Fase 1',
@@ -76,7 +75,16 @@ class PhasesGpm extends StatelessWidget {
                   ancho: 0.6
                 ),
               ),
-              
+              SizedBox(height: 25,),
+              Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: FloatingActionButton(
+                child: Icon( Icons.arrow_back ),
+                onPressed: () {
+                  Navigator.pop(context);
+                },
+              ),
+            ),
               
             ],
           ),
