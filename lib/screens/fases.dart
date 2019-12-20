@@ -96,8 +96,6 @@ class PhasesGpm extends StatelessWidget {
 
 }
 
-
-
 class BannerTitled extends StatelessWidget {
   BannerTitled({this.color, this.texto, this.ancho});
   final Color color;
