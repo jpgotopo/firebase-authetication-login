@@ -1,14 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:gpm_version_4/pages/settings.dart';
+//import 'package:gpm_version_4/pages/settings.dart';
 import 'package:gpm_version_4/pages/todos.dart';
-import 'package:gpm_version_4/pages/todosArchive.dart';
-import 'package:gpm_version_4/screens/curso_vamos.dart';
-import 'package:gpm_version_4/screens/fases.dart';
-import 'package:gpm_version_4/screens/profile_ind.dart';
-import 'package:gpm_version_4/screens/teologicos.dart';
+//import 'package:gpm_version_4/pages/todosArchive.dart';
+//import 'package:gpm_version_4/screens/callclarity.dart';
+import 'package:gpm_version_4/screens/callplace.dart';
+//import 'package:gpm_version_4/screens/curso_vamos.dart';
+//import 'package:gpm_version_4/screens/fases.dart';
+//import 'package:gpm_version_4/screens/localechurch.dart';
+//import 'package:gpm_version_4/screens/profile_ind.dart';
+//import 'package:gpm_version_4/screens/teologicos.dart';
 import 'package:gpm_version_4/screens/timeline.dart';
-import 'package:gpm_version_4/screens/transcultural.dart';
-import 'package:gpm_version_4/src/ui/calendarpage/calendarpage.dart';
+//import 'package:gpm_version_4/screens/transcultural.dart';
+//import 'package:gpm_version_4/src/ui/calendarpage/calendarpage.dart';
 
 class MainTabsPage extends StatelessWidget {
   @override
@@ -25,7 +28,10 @@ class MainTabsPage extends StatelessWidget {
               //PhasesGpm(),
               //CursoVamos(),
               //ScreenPhases()
-              TheologyStudies()
+              //TheologyStudies()
+              //LocalChurch()
+              //CallClarity()
+              CallPlace()
             ],
             
           ),

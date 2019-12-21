@@ -1,22 +1,18 @@
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 
-import 'fases.dart';
-
-class LocalChurch extends StatelessWidget {
+class CallClarity extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final media = MediaQuery.of(context).size;
     return Material(
       child: SafeArea(
         child: Column(
-          
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: <Widget>[
             Container(
-              margin: EdgeInsets.only(top: 10),
-              height: media.height * 0.4,
+              height: media.height * 0.35,
               width: media.width * 0.85,
               decoration: BoxDecoration(
                 
@@ -30,13 +26,13 @@ class LocalChurch extends StatelessWidget {
                   bottomLeft: Radius.circular(60),
                   bottomRight: Radius.circular(60)),
                 gradient: LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+                  begin: Alignment.topCenter,
+                  end: Alignment.bottomCenter,
                   colors: <Color>[
-                    Color(0xFF65B04B),
-                    Color(0xFF409422),
-                    Color(0xFF409422),
-                    Color(0xFF65B04B),
+                    Color(0xFFF1A746),
+                    Color(0xFFD58A28),
+                    Color(0xFFD58A28),
+                    Color(0xFFF1A746),
                   ],
               ),),
               child: Column(
@@ -44,23 +40,20 @@ class LocalChurch extends StatelessWidget {
                 
                 children: <Widget>[
                   // TODO aqui van datos importados desde base de datos
-                  Text('Sirviendo en la Iglesia', style: TextStyle(color: Colors.white, fontSize: 14),), 
+                  AutoSizeText('Mi Llamado Misionero es', style: TextStyle(color: Colors.white, fontSize: 14),), 
                   Padding(
                     padding: const EdgeInsets.all(12.0),
-                    child: Text('Puerta del Cielo',textAlign: TextAlign.center,  style: TextStyle(color: Colors.white, fontSize: 22, fontWeight: FontWeight.bold),),
+                    child: AutoSizeText('Traducción Bíblica y Alfabetización',textAlign: TextAlign.center,  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.only(top:4.0),
-                    child: Text('Av. Brasil 1733 - Lima',textAlign: TextAlign.center,  style: TextStyle(color: Colors.white, fontSize: 12, fontWeight: FontWeight.bold),),
-                  ),
+                  AutoSizeText('Sudeste Asiático')
                 ],
               ),
             ),
             
             Padding(
-              padding: const EdgeInsets.only(top: 4.0),
+              padding: const EdgeInsets.only(top: 8.0),
               child: Container(
-                height: media.height * 0.4,
+                height: media.height * 0.45,
                 width: media.width * 0.85,
                 decoration: BoxDecoration(
                   boxShadow: [BoxShadow(
@@ -80,34 +73,27 @@ class LocalChurch extends StatelessWidget {
                       decoration: BoxDecoration(
                         color: Colors.blue
                       ),
-                      child: Text('Ministerios', style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),)
+                      child: Text('Mi Breve Testimonio', style: TextStyle(color: Colors.white, fontSize: 18))
                     ),
-                    SizedBox(height: 12,),
+                    SizedBox(height: 20,),
                     Container(
-                      
+                      width: media.width * 0.8,
                       alignment: Alignment.center,
-                      color: Colors.white,
-                      height: media.height * 0.12,
-                      child: ListView(
-                        scrollDirection: Axis.horizontal,
-                        children: <Widget>[
-                          DataInfo(info: 'Escuela Dominical'),
-                          DataInfo(info: 'Misiones',),
-                          DataInfo(info: 'Plantación de Iglesias',),
-                          DataInfo(info: 'Damas'),
-                          DataInfo(info: 'Varones'),
-                          DataInfo(info: 'Ministerio Juvenil'),
-                          DataInfo(info: 'Evangelismo'),
-                          DataInfo(info: 'Diácono(a)'),
-                          DataInfo(info: 'Pastor',),
-                          DataInfo(info: 'Tecnología y Comunicaciones',)
-                        ],
+                      decoration: BoxDecoration(
+                        border: Border.all(color: Color(0xFF727272), width: 0.2),
+                        borderRadius: BorderRadius.circular(10),
+                        color: Colors.white70,
+                      ),
+                      height: media.height * 0.18,
+                      child: Padding(
+                        
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('"En el año 2009 fui a un taller de Orientación a la Traducción Bíblica y fue allí donde descubrí la gran necesidad que hay entre los Pueblos que no tienen Biblia."', style: TextStyle(fontWeight: FontWeight.bold, ), textAlign: TextAlign.center,),
                       )
                     ),
                     
-                    
                     Padding(
-                      padding: EdgeInsets.all(4),
+                      padding: EdgeInsets.all(8),
                       child: FloatingActionButton(
                         child: Icon(Icons.arrow_back, size: 32,),
                         onPressed: ()=> Navigator.pop(context),
