@@ -3,7 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:gpm_version_4/pages/todos.dart';
 //import 'package:gpm_version_4/pages/todosArchive.dart';
 //import 'package:gpm_version_4/screens/callclarity.dart';
-import 'package:gpm_version_4/screens/callplace.dart';
+//import 'package:gpm_version_4/screens/callplace.dart';
+import 'package:gpm_version_4/screens/misioneros.dart';
 //import 'package:gpm_version_4/screens/curso_vamos.dart';
 //import 'package:gpm_version_4/screens/fases.dart';
 //import 'package:gpm_version_4/screens/localechurch.dart';
@@ -31,7 +32,8 @@ class MainTabsPage extends StatelessWidget {
               //TheologyStudies()
               //LocalChurch()
               //CallClarity()
-              CallPlace()
+              //CallPlace()
+              MissionaryScreen()
             ],
             
           ),
