@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-import 'dart:async' show Future;
+//import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
-import 'package:gpm_version_4/src/models/obreros_model.dart';
+//import 'package:gpm_version_4/src/models/obreros_model.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:gpm_version_4/src/ui/card_swiper_widget.dart';
 
@@ -14,7 +14,7 @@ class MissionaryScreen extends StatefulWidget {
 }
 
 class _MissionaryScreenState extends State<MissionaryScreen> {
-  Future _loadAsWorkerAsset() async {
+  /* Future _loadAsWorkerAsset() async {
     return await rootBundle.loadString('assets/misioneros.json');
   }
 
@@ -23,7 +23,7 @@ class _MissionaryScreenState extends State<MissionaryScreen> {
     final jsonResponse = json.decode(jsonString);
     Worker worker = new Worker.fromJson(jsonResponse);
     print(worker.lugar);
-  }
+  } */
 
   @override
   Widget build(BuildContext context) {
@@ -71,28 +71,36 @@ class _MissionaryScreenState extends State<MissionaryScreen> {
                 ],
               ),
             ),
-            Container(
+            /* Container(
               height: media.height * 0.5,
               child: CardSwiper()
-            )
+            ) */
             
-            /* Padding(
-              padding: const EdgeInsets.only(top: 8.0),
+            Padding(
+              padding: const EdgeInsets.only(top: 12.0),
               child: Container(
                 height: media.height * 0.4,
-                child: Swiper(
+                child: CardSwiper()
+                /* Swiper(
                   itemWidth: media.width * .6,
                   itemHeight: media.height * 0.4,
-                  layout: SwiperLayout.STACK,
+                  //layout: SwiperLayout.STACK,
                   itemCount: 4,
                   itemBuilder: (BuildContext context, int index){
                     return Image.network("http://via.placeholder.com/350x250", fit: BoxFit.fill);
                   },
                   pagination: new SwiperPagination(),
                   control: new SwiperControl(),
-                ),
+                ), */
               )
-            )  */
+            ),
+            Padding(
+              padding: EdgeInsets.only(top: 12),
+              child: FloatingActionButton(
+                child: Icon(Icons.arrow_back, size: 32,),
+                onPressed: ()=> Navigator.pop(context),
+              ),
+            )  
 
           ],
         ),

@@ -1,8 +1,10 @@
+import 'package:gpm_version_4/data/misioneros_parser.dart';
 import 'package:http/http.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:gpm_version_4/src/models/obreros_model.dart';
+
 //import 'dart:async' show Future;
 //import 'package:flutter/services.dart' show rootBundle;
 //import 'dart:convert';
@@ -28,15 +30,15 @@ class _CardSwiperState extends State<CardSwiper> {
       child: Swiper(
         itemHeight: media.height * 0.4,
         itemWidth: media.width * .6,
-        
-        itemCount: 4,
-        itemBuilder: (BuildContext context, int index){
+        layout: SwiperLayout.TINDER,
+        itemCount: 39,
+        /* itemBuilder: (BuildContext context, int index){
           return FutureBuilder(
             future: widget.worker,
             builder: (context, snapshot){
               if(snapshot.hasData){
                 //card
-                return Text(snapshot.data.nombreProy[0]);
+                return Text(snapshot.data.id);
               }else if(snapshot.hasError){
                 return Text("${snapshot.error}");
               }
@@ -44,20 +46,36 @@ class _CardSwiperState extends State<CardSwiper> {
             },
 
           );
-        },
-        /* itemBuilder: (BuildContext context, int index){
-          return ClipRRect(
-            borderRadius: BorderRadius.circular(20),
+        }, */
+        itemBuilder: (BuildContext context, int index){
+          return Container(
+            decoration: BoxDecoration(
+              color: Colors.orange,
+              border: Border.all(color: Color(0xFF858585)),
+              borderRadius: BorderRadius.circular(20),
+            ),
             child: Column(
               children: <Widget>[
-                Text(''),
-                Image.asset('assets/arkani.png', height: 35, width: 35,),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('Familia Arkani', style: TextStyle(fontSize: 18),),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Image.asset('assets/arkani.png', height: 60, width: 60,),
+                ),
+                SizedBox(height: 20,),
                 Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  
                   children: <Widget>[
                     Column(
                       children: <Widget>[
-                        Image.asset('orar.png', height: 25, width: 25,),
-                        Text('Orar'),
+                        Image.asset('pray.png', height: 30, width: 30,),
+                        Padding(
+                          padding: const EdgeInsets.only(top:5.0),
+                          child: Text('Orar'),
+                        ),
                         Switch(
                           value: isOrar,
                           onChanged: (value){
@@ -71,8 +89,11 @@ class _CardSwiperState extends State<CardSwiper> {
                     ),
                     Column(
                       children: <Widget>[
-                        Image.asset('ofrendar.png', height: 25, width: 25,),
-                        Text('Ofrendar'),
+                        Image.asset('give.png', height: 30, width: 30,),
+                        Padding(
+                          padding: const EdgeInsets.only(top:5.0),
+                          child: Text('Ofrendar'),
+                        ),
                         Switch(
                           value: isOfrendar,
                           onChanged: (value){
@@ -85,8 +106,11 @@ class _CardSwiperState extends State<CardSwiper> {
                     ),
                     Column(
                       children: <Widget>[
-                        Image.asset('movilizar.png', height: 25, width: 25,),
-                        Text('Movilizar'),
+                        Image.asset('move.png', height: 30, width: 30,),
+                        Padding(
+                          padding: const EdgeInsets.only(top:5.0),
+                          child: Text('Movilizar'),
+                        ),
                         Switch(
                           value: isMovilizar,
                           onChanged: (value){
@@ -102,8 +126,8 @@ class _CardSwiperState extends State<CardSwiper> {
               ],
             ),
           );
-        }, */
-        pagination: new SwiperPagination(),
+        },
+        
         control: new SwiperControl(),
       ),
     );

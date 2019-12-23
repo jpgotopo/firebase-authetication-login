@@ -60,6 +60,10 @@ flutter:
    - jean_paul.png
    - india.png
    - misioneros.json
+   - arkani.png
+   - give.png
+   - move.png
+   - pray.png
    
 
   # An image asset can refer to one or more resolution-specific "variants", see

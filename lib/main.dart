@@ -1,12 +1,16 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:gpm_version_4/data/misioneros_parser.dart';
 import 'package:gpm_version_4/pages/mainTabs.dart';
 import 'dart:async';
 import 'package:gpm_version_4/pages/register.dart';
 import 'package:gpm_version_4/routes.dart';
 import 'package:gpm_version_4/theme.dart';
 
-void main() => runApp(new TodoApp());
+void main() {
+  runApp(new TodoApp());
+  loadMisioneros();
+}
 
 class TodoApp extends StatefulWidget {
   @override
