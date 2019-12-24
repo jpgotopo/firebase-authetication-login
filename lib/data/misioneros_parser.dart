@@ -2,7 +2,7 @@ import 'dart:async' show Future;
 import 'package:flutter/services.dart' show rootBundle;
 import 'dart:convert';
 
-Misioneros _parseJsonForMisioneros(String jsonString) {
+/* Misioneros _parseJsonForMisioneros(String jsonString) {
   Map decoded = jsonDecode(jsonString);
   return new Misioneros(decoded['id'], decoded['nombreProy'], decoded['image'], decoded['lugar'], decoded['proceso']);
 
@@ -17,7 +17,7 @@ Future loadMisioneros() async {
   Misioneros misionero =_parseJsonForMisioneros(jsonMisioneros);
 
   print(misionero.nombreProy);
-}
+} */
 
 class Misioneros {
   final int id;

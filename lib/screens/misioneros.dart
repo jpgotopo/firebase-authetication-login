@@ -1,10 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
-//import 'dart:async' show Future;
-import 'package:flutter/services.dart' show rootBundle;
-import 'dart:convert';
-//import 'package:gpm_version_4/src/models/obreros_model.dart';
-import 'package:flutter_swiper/flutter_swiper.dart';
+import 'package:gpm_version_4/data/worker_list.dart';
+//import 'package:gpm_version_4/services/worker_services.dart';
 import 'package:gpm_version_4/src/ui/card_swiper_widget.dart';
 
 
@@ -14,21 +11,14 @@ class MissionaryScreen extends StatefulWidget {
 }
 
 class _MissionaryScreenState extends State<MissionaryScreen> {
-  /* Future _loadAsWorkerAsset() async {
-    return await rootBundle.loadString('assets/misioneros.json');
-  }
-
-  Future loadWorker() async {
-    String jsonString = await _loadAsWorkerAsset();
-    final jsonResponse = json.decode(jsonString);
-    Worker worker = new Worker.fromJson(jsonResponse);
-    print(worker.lugar);
-  } */
+  
 
   @override
   Widget build(BuildContext context) {
     
+    
     final media = MediaQuery.of(context).size;
+    
     return Material(
       child: SafeArea(
         child: Column(
@@ -67,7 +57,8 @@ class _MissionaryScreenState extends State<MissionaryScreen> {
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: AutoSizeText('Mi Compromiso con los Misioneros',textAlign: TextAlign.center,  style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),),
-                  )
+                  ),
+                  
                 ],
               ),
             ),
@@ -80,7 +71,7 @@ class _MissionaryScreenState extends State<MissionaryScreen> {
               padding: const EdgeInsets.only(top: 12.0),
               child: Container(
                 height: media.height * 0.4,
-                child: CardSwiper()
+                child: WorkersList()
                 /* Swiper(
                   itemWidth: media.width * .6,
                   itemHeight: media.height * 0.4,
@@ -110,17 +101,3 @@ class _MissionaryScreenState extends State<MissionaryScreen> {
   }
 }
 
-class MissionaryItems extends StatelessWidget {
-  MissionaryItems({this.title, this.field, this.image});
-
-  final String field;
-  final String image;
-  final String title;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      
-    );
-  }
-}

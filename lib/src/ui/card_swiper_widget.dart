@@ -1,13 +1,6 @@
-import 'package:gpm_version_4/data/misioneros_parser.dart';
-import 'package:http/http.dart';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:gpm_version_4/src/models/obreros_model.dart';
-
-//import 'dart:async' show Future;
-//import 'package:flutter/services.dart' show rootBundle;
-//import 'dart:convert';
 
 class CardSwiper extends StatefulWidget {
 
@@ -32,21 +25,7 @@ class _CardSwiperState extends State<CardSwiper> {
         itemWidth: media.width * .6,
         layout: SwiperLayout.TINDER,
         itemCount: 39,
-        /* itemBuilder: (BuildContext context, int index){
-          return FutureBuilder(
-            future: widget.worker,
-            builder: (context, snapshot){
-              if(snapshot.hasData){
-                //card
-                return Text(snapshot.data.id);
-              }else if(snapshot.hasError){
-                return Text("${snapshot.error}");
-              }
-              return CircularProgressIndicator();
-            },
-
-          );
-        }, */
+      
         itemBuilder: (BuildContext context, int index){
           return Container(
             decoration: BoxDecoration(
