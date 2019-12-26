@@ -1,12 +1,21 @@
 import 'package:flutter/material.dart';
+import 'dart:convert';
+import 'package:flutter/services.dart';
+
 import 'package:flutter_swiper/flutter_swiper.dart';
 import 'package:gpm_version_4/src/models/obreros_model.dart';
 
 class CardSwiper extends StatefulWidget {
 
-  final Future<Worker> worker;
-  CardSwiper({Key key, this.worker}) : super(key: key);
-
+  Future<void> readJsonFromLocalPath(String path) async {
+    String data = await rootBundle.loadString('assets/$path.json');
+    var jsonList = json.decode(data);
+    if (jsonList is List) {
+      for (var item in jsonList) {
+        print(Worker.fromJson(item));
+      }
+    }
+  }
   @override
   _CardSwiperState createState() => _CardSwiperState();
 }

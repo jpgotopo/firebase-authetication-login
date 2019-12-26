@@ -1,9 +1,10 @@
 class Worker{
-  final String id;
-  final String nombreProy;
-  final String image;
-  final String lugar;
-  final String proceso;
+  int id;
+  String nombreProy;
+  String image;
+  String lugar;
+  String proceso;
+
 
   Worker({
     this.id,
@@ -14,15 +15,24 @@ class Worker{
 
   });
 
-  factory Worker.fromJson(Map<String, dynamic> json) {
-    return new Worker(
-      id: json['id'].toString(),
-      nombreProy: json['nombreProy'],
-      image: json['image'],
-      lugar: json['lugar'],
-      proceso: json['proceso'],
-    );
-  }
+   Worker.fromJson(Map<String, dynamic> json) {
+    
+      id = json['id'];
+      nombreProy = json['nombreProy'];
+      image = json['image'];
+      lugar = json['lugar'];
+      proceso = json['proceso'];
+    }
+
+    Map<String, dynamic> toJson() {
+      final Map<String, dynamic> data = new Map<String, dynamic>();
+      data['id'] = this.id;
+      data['nombreProy'] = this.nombreProy;
+      data['image'] = this.image;
+      data['lugar'] = this.lugar;
+      data['proceso'] = this.proceso;
+      return data;
+    }   
 
 }
 
