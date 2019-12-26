@@ -7,20 +7,13 @@ import 'package:gpm_version_4/src/models/obreros_model.dart';
 
 class CardSwiper extends StatefulWidget {
 
-  Future<void> readJsonFromLocalPath(String path) async {
-    String data = await rootBundle.loadString('assets/$path.json');
-    var jsonList = json.decode(data);
-    if (jsonList is List) {
-      for (var item in jsonList) {
-        print(Worker.fromJson(item));
-      }
-    }
-  }
+  
   @override
   _CardSwiperState createState() => _CardSwiperState();
 }
 
 class _CardSwiperState extends State<CardSwiper> {
+  
   
   @override
   Widget build(BuildContext context) {
@@ -28,7 +21,18 @@ class _CardSwiperState extends State<CardSwiper> {
     bool isOfrendar = true;
     bool isMovilizar = true;
     final media = MediaQuery.of(context).size;
+    Future<void> readJsonFromLocalPath(String path) async {
+      String data = await rootBundle.loadString('assets/$path.json');
+      var jsonList = json.decode(data);
+      if (jsonList is List) {
+        
+        for (var item in jsonList) {
+          print(Worker.fromJson(item).nombreProy);
+        }
+      }
+    }
     return Container(
+      
       child: Swiper(
         itemHeight: media.height * 0.4,
         itemWidth: media.width * .6,
@@ -36,6 +40,9 @@ class _CardSwiperState extends State<CardSwiper> {
         itemCount: 39,
       
         itemBuilder: (BuildContext context, int index){
+          
+          readJsonFromLocalPath("misioneros");
+          
           return Container(
             decoration: BoxDecoration(
               color: Colors.orange,
@@ -45,14 +52,14 @@ class _CardSwiperState extends State<CardSwiper> {
             child: Column(
               children: <Widget>[
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Text('Familia Arkani', style: TextStyle(fontSize: 18),),
                 ),
                 Padding(
-                  padding: const EdgeInsets.all(8.0),
+                  padding: const EdgeInsets.all(4.0),
                   child: Image.asset('assets/arkani.png', height: 60, width: 60,),
                 ),
-                SizedBox(height: 20,),
+                SizedBox(height: 8,),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceAround,
                   
@@ -110,7 +117,14 @@ class _CardSwiperState extends State<CardSwiper> {
                       ],
                     ),
                   ],
-                )
+                ),
+                Padding(
+                  padding: EdgeInsets.only(top:6 ),
+                  child: FloatingActionButton(
+                    onPressed: () {
+                      readJsonFromLocalPath("misioneros"); }
+                  ),
+            ),
               ],
             ),
           );

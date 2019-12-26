@@ -10,8 +10,7 @@ import 'package:gpm_version_4/theme.dart';
 
 void main() {
   runApp(new TodoApp());
-  loadWorker();
-}
+  }
 
 class TodoApp extends StatefulWidget {
   @override

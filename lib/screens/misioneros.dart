@@ -20,6 +20,7 @@ class _MissionaryScreenState extends State<MissionaryScreen> {
     final media = MediaQuery.of(context).size;
     
     return Material(
+      
       child: SafeArea(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
@@ -71,7 +72,7 @@ class _MissionaryScreenState extends State<MissionaryScreen> {
               padding: const EdgeInsets.only(top: 12.0),
               child: Container(
                 height: media.height * 0.4,
-                child: WorkersList()
+                child: CardSwiper()
                 /* Swiper(
                   itemWidth: media.width * .6,
                   itemHeight: media.height * 0.4,
@@ -85,6 +86,7 @@ class _MissionaryScreenState extends State<MissionaryScreen> {
                 ), */
               )
             ),
+            
             Padding(
               padding: EdgeInsets.only(top: 12),
               child: FloatingActionButton(

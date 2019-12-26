@@ -8,7 +8,7 @@ Future _loadAsWorkerAsset() async {
     return await rootBundle.loadString('assets/misioneros.json');
   }
 
-Future loadWorker() async {
+Future cWorker() async {
   String jsonString = await _loadAsWorkerAsset();
   final jsonResponse = json.decode(jsonString);
   WorkerList workerList = new WorkerList.fromJson(jsonResponse);
