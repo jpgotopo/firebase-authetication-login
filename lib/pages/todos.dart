@@ -322,7 +322,7 @@ class WholeIcon extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.center,
       children: <Widget>[
         Padding(
-          padding: const EdgeInsets.all(1.0),
+          padding: const EdgeInsets.only(bottom: 8.0, top: 2),
           child: FloatingActionButton(
             child: iconow,
             backgroundColor: colorw,

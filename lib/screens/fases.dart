@@ -373,6 +373,7 @@ class _DataInfoState extends State<DataInfo> {
                     isSwitched = value;
                   });
                 },
+                inactiveThumbColor: Colors.orange,
                 activeTrackColor: Colors.lightGreenAccent, 
                 activeColor: Colors.green[500],
               ),

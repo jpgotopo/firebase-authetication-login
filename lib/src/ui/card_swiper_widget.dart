@@ -21,8 +21,14 @@ class CardSwiperState extends State<CardSwiper> {
 
             var myData = json.decode(snapshot.data.toString());
             return Swiper(
+              curve: Curves.elasticOut,
+              customLayoutOption: CustomLayoutOption(startIndex: -1, stateCount: 2).addRotate([-45.0 / 180, 0.0, 45 / 180]).addTranslate([
+                Offset(-370, -40),
+                Offset(0.0, 0.0),
+                Offset(370, -40)
+              ]),
               itemHeight: media.height * 0.4,
-              itemWidth: media.width * .6,
+              itemWidth: media.width * .5,
               layout: SwiperLayout.STACK,
               itemCount: myData == null ? 0 : myData.length,
 
@@ -47,7 +53,7 @@ class CardSwiperState extends State<CardSwiper> {
                     children: <Widget>[
                       Padding(
                         padding: const EdgeInsets.all(4.0),
-                        child: Text(myData[index]['nombreProy'], style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
+                        child: Text(myData[index]['nombreProy'], style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
                       ),
                       Text(myData[index]['lugar']),
                       Padding(
@@ -61,6 +67,8 @@ class CardSwiperState extends State<CardSwiper> {
                         
                         children: <Widget>[
                           Column(
+                            crossAxisAlignment: CrossAxisAlignment.center,
+                            mainAxisAlignment: MainAxisAlignment.center,
                             children: <Widget>[
                               Image.asset('pray.png', height: 30, width: 30,),
                               Padding(
@@ -74,6 +82,9 @@ class CardSwiperState extends State<CardSwiper> {
                                     isOrar = value;
                                   });
                                 },
+                                inactiveThumbColor: Colors.red,
+                                activeTrackColor: Colors.lightBlueAccent, 
+                                activeColor: Colors.green[500],
                               )
                             ],
                             
@@ -92,6 +103,9 @@ class CardSwiperState extends State<CardSwiper> {
                                     isOfrendar = value;
                                   });
                                 },
+                                inactiveThumbColor: Colors.red,
+                                activeTrackColor: Colors.lightBlueAccent, 
+                                activeColor: Colors.green[500],
                               )
                             ],
                           ),
@@ -109,6 +123,9 @@ class CardSwiperState extends State<CardSwiper> {
                                     isMovilizar = value;
                                   });
                                 },
+                                inactiveThumbColor: Colors.red,
+                                activeTrackColor: Colors.lightBlueAccent, 
+                                activeColor: Colors.green[500],
                               )
                             ],
                           ),

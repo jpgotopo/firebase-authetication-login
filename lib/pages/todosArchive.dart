@@ -12,14 +12,12 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
       // appBar: AppBar(title: Text('Archive'),),
       body:Column(
         crossAxisAlignment: CrossAxisAlignment.center,
-        
         children: <Widget>[
           Stack(
             alignment: AlignmentDirectional.center,
             children: <Widget>[
               Container(
                 height: 70.0,
-                
                 decoration: new BoxDecoration(
                   gradient: LinearGradient(
                     begin: Alignment.topLeft,
@@ -46,11 +44,9 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
               ),
             ],
           ),
-          
           Padding(
             padding: const EdgeInsets.only(top: 10.0, bottom: 10.0),
             child: Container(
-              
               height: 72.0,
               width: 72.0,
               decoration: BoxDecoration(
@@ -60,7 +56,6 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
                   image:NetworkImage('https://avatars1.githubusercontent.com/u/27728874?s=460&v=4')
                 )
               ),
-              
             ),
           ),
           Stack(
@@ -72,14 +67,12 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(25.0),
                   color: Colors.white70,
-                  
                 ),
               ),
               Text('Jean Paul Gotopo M. ', textAlign: TextAlign.center, style: TextStyle(
-               color: Colors.blue[600], fontWeight: FontWeight.w700, fontSize: 16.0),)
+              color: Colors.blue[600], fontWeight: FontWeight.w700, fontSize: 16.0),)
             ],
           ),
-          
           Divider(),
           Card(
             margin: EdgeInsets.all(12.0),
@@ -91,7 +84,6 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
                 Padding(
                   padding: const EdgeInsets.all(08.0),
                   child: Row(
-                    
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: <Widget>[
@@ -103,8 +95,6 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
                                 image: NetworkImage('https://image.flaticon.com/icons/svg/197/197419.svg')
                             )
                         ), */
-
-                      
                       Text('INDIA', style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold, color: Color(0xFF2383C5)),),
                     ],
                   ),
@@ -115,7 +105,6 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text('Desarrollo Social', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF2383C5)),),
-                      
                       Text('34 años', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF2383C5)),),
 
                     ],
@@ -127,9 +116,7 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text('Ministro Cristiano', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF2383C5)),),
-                      
                       Text('Iglesia Peniel', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF2383C5)),),
-
                     ],
                   ),
                 ),
@@ -139,9 +126,7 @@ class _TodosAchivePageState extends State<TodosAchivePage> {
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: <Widget>[
                       Text('Lima Centro', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF2383C5)),),
-                      
                       Text('Proyecto Aprobado', style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold, color: Color(0xFF2383C5)),),
-
                     ],
                   ),
                 ),

@@ -93,7 +93,7 @@ class ContainerOfInfo extends StatefulWidget {
 class _ContainerOfInfoState extends State<ContainerOfInfo> {
   @override
   Widget build(BuildContext context) {
-    bool isSwitched = true;
+    bool isSwitched = false;
     return Padding(
       padding: const EdgeInsets.all(3.0),
       child: Container(
@@ -116,6 +116,7 @@ class _ContainerOfInfoState extends State<ContainerOfInfo> {
                     isSwitched = value;
                   });
                 },
+                inactiveThumbColor: Colors.red,
                 activeTrackColor: Colors.lightBlueAccent, 
                 activeColor: Colors.green[500],
               ),
