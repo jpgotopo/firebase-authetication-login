@@ -130,6 +130,7 @@ class _RegisterPageState extends State<RegisterPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'register',
         backgroundColor: Color(0xFF296690),
         onPressed: () {
           _register();

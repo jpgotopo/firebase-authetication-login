@@ -108,6 +108,7 @@ class _ForgotPasswordPageState extends State<ForgotPasswordPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'forgot',
         onPressed: () {
           _forgotPassword();
         },

@@ -137,6 +137,7 @@ class _LoginPageState extends State<LoginPage> {
           )
         ),
       ),floatingActionButton: FloatingActionButton(
+        heroTag: 'login',
         backgroundColor: Color(0xFF296690),
         onPressed: (){
           _login();

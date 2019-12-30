@@ -109,6 +109,7 @@ class LocalChurch extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(4),
                       child: FloatingActionButton(
+                        heroTag: 'localchurch',
                         child: Icon(Icons.arrow_back, size: 32,),
                         onPressed: ()=> Navigator.pop(context),
                       ),

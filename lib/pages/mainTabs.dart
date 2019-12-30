@@ -6,7 +6,7 @@ import 'package:gpm_version_4/screens/language_advance.dart';
 //import 'package:gpm_version_4/screens/callclarity.dart';
 //import 'package:gpm_version_4/screens/callplace.dart';
 import 'package:gpm_version_4/screens/misioneros.dart';
-//import 'package:gpm_version_4/screens/curso_vamos.dart';
+import 'package:gpm_version_4/screens/curso_vamos.dart';
 //import 'package:gpm_version_4/screens/fases.dart';
 //import 'package:gpm_version_4/screens/localechurch.dart';
 //import 'package:gpm_version_4/screens/profile_ind.dart';
@@ -25,10 +25,10 @@ class MainTabsPage extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               TodosPage(),
-              LineaTiempo(),
-              //MyApp()
+              //LineaTiempo(),
+              //TransCultural()
               //PhasesGpm(),
-              //CursoVamos(),
+              CursoVamos(),
               //ScreenPhases()
               //TheologyStudies()
               //LocalChurch()

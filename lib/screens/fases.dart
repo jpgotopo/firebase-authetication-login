@@ -79,6 +79,7 @@ class PhasesGpm extends StatelessWidget {
               Padding(
               padding: const EdgeInsets.all(8.0),
               child: FloatingActionButton(
+                heroTag: 'fases',
                 child: Icon( Icons.arrow_back ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -178,6 +179,7 @@ class InfoFase1 extends StatelessWidget {
              Padding(
               padding: const EdgeInsets.all(8.0),
               child: FloatingActionButton(
+                heroTag: 'fase1',
                 child: Icon( Icons.arrow_back ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -240,6 +242,7 @@ class InfoFase2 extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: FloatingActionButton(
+                heroTag: 'fase2',
                 child: Icon( Icons.arrow_back ),
                 onPressed: () {
                   Navigator.pop(context);
@@ -318,6 +321,7 @@ class InfoFase3 extends StatelessWidget {
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: FloatingActionButton(
+                heroTag: 'fase3',
                 child: Icon( Icons.arrow_back ),
                 onPressed: () {
                   Navigator.of(context).pushNamed('/screen1');

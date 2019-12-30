@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:gpm_version_4/pages/settings.dart';
+import 'package:gpm_version_4/screens/callclarity.dart';
+import 'package:gpm_version_4/screens/callplace.dart';
 import 'package:gpm_version_4/screens/curso_vamos.dart';
 import 'package:gpm_version_4/screens/fases.dart';
+import 'package:gpm_version_4/screens/language_advance.dart';
+import 'package:gpm_version_4/screens/localechurch.dart';
+import 'package:gpm_version_4/screens/misioneros.dart';
 import 'package:gpm_version_4/screens/profile_ind.dart';
+import 'package:gpm_version_4/screens/teologicos.dart';
 import 'package:gpm_version_4/screens/timeline.dart';
 import 'package:gpm_version_4/screens/transcultural.dart';
 /* class PrincipalScreen extends StatelessWidget {
@@ -24,7 +30,7 @@ import 'package:gpm_version_4/screens/transcultural.dart';
         '/screen7': (context) => ScreenPhases(),
         '/screen8': (context) => ScreenPhases(),
         '/screen9': (context) => ScreenPhases(),
-        '/screen10': (context) => MyApp(),
+        '/screen10': (context) => TransCultural(),
         '/screen11': (context) => ScreenPhases(),
         '/screen12': (context) => ScreenPhases(),
         '/screen13': (context) => ScreenPhases(),
@@ -121,19 +127,19 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
     List<MenuPrincipalItems> menuPrincipalItem = [
       MenuPrincipalItems(
         title: "Perfil",
-        icono: IconButton(icon: Icon(Icons.person), onPressed: () => Navigator.pushNamed(context, '/screen2')),
+        icono: IconButton(icon: Icon(Icons.person), onPressed: () => Navigator.push(context, new MaterialPageRoute(builder: (context) => PerfilIndividual()))),
         colorBox: Colors.blue,
         colorIcon: Colors.white,
       ),
       MenuPrincipalItems(
         title: "Timeline",
-        icono: IconButton(icon: Icon(Icons.hourglass_full), onPressed: (){Navigator.of(context).pushNamed('/screen3');},),
+        icono: IconButton(icon: Icon(Icons.hourglass_full), onPressed: () => Navigator.push(context, new MaterialPageRoute(builder: (context) => LineaTiempo()))),
         colorBox: Colors.red,
         colorIcon: Colors.white,
       ),
       MenuPrincipalItems(
         title: "Fases",
-        icono: IconButton(icon: Icon(Icons.loop), onPressed: (){},),
+        icono: IconButton(icon: Icon(Icons.loop), onPressed: () => Navigator.push(context, new MaterialPageRoute(builder: (context) => ScreenPhases()))),
         colorBox: Colors.amber,
         colorIcon: Colors.white,
       ),
@@ -167,12 +173,13 @@ class MenuPrincipalItems extends StatelessWidget {
   
   @override
   Widget build(BuildContext context) {
-    Route transcultural = MaterialPageRoute(builder: (context)=>MyApp());
+    
     return Column(
       children: <Widget>[
         Padding(
           padding: const EdgeInsets.all(1.0),
           child: FloatingActionButton(
+            heroTag: title,
             child: icono,
             backgroundColor: colorBox,
             onPressed: () {
@@ -198,9 +205,7 @@ class MenuPrincipalItems extends StatelessWidget {
 class MenuSecundario extends StatelessWidget {
 
   Widget build(BuildContext context) {
-    Route todos = MaterialPageRoute(builder: (context)=>TodosPage());
-    Route transcultural = MaterialPageRoute(builder: (context)=>MyApp());
-    Route vamos = MaterialPageRoute(builder: (context)=>CursoVamos());
+  
     return Container(
       padding: EdgeInsets.symmetric(vertical: 10.0),
 
@@ -211,7 +216,7 @@ class MenuSecundario extends StatelessWidget {
             children: <Widget>[
               
               WholeIcon(
-                trayecto: null,
+                trayecto: CallClarity(),
                 iconow: Icon(Icons.lightbulb_outline, size: 32,),
                 linea1: 'Claridad en',
                 linea2: 'el Llamado',
@@ -219,7 +224,7 @@ class MenuSecundario extends StatelessWidget {
               ),
               
               WholeIcon(
-                trayecto: null,
+                trayecto: CallPlace(),
                 iconow: Icon(Icons.map, size: 32,),
                 linea1: 'Lugal del',
                 linea2: 'Llamado',
@@ -234,7 +239,7 @@ class MenuSecundario extends StatelessWidget {
             children: <Widget>[
               
               WholeIcon(
-                trayecto: null,
+                trayecto: TheologyStudies(),
                 iconow: Icon(Icons.book, size: 32,),
                 linea1: 'Estudios',
                 linea2: 'Teológicos',
@@ -247,14 +252,14 @@ class MenuSecundario extends StatelessWidget {
             children: <Widget>[
               
               WholeIcon(
-                trayecto: null,
+                trayecto: TransCultural(),
                 iconow: Icon(Icons.language, size: 32,),
                 linea1: 'Estudios',
                 linea2: 'Transculturales',
                 colorw: Colors.green,
               ),              
               WholeIcon(
-                trayecto: null,
+                trayecto: LanguageAdvance(),
                 iconow: Icon(Icons.translate, size: 32,),
                 linea1: 'Avance en',
                 linea2: 'el Idioma',
@@ -269,7 +274,7 @@ class MenuSecundario extends StatelessWidget {
             children: <Widget>[
               
               WholeIcon(
-                trayecto: vamos,
+                trayecto: LocalChurch(),
                 iconow: Icon(Icons.home),
                 linea1: 'Compromiso',
                 linea2: 'Iglesia Local',
@@ -282,14 +287,14 @@ class MenuSecundario extends StatelessWidget {
             children: <Widget>[
              
               WholeIcon(
-                trayecto: vamos,
+                trayecto: CursoVamos(),
                 iconow: Icon(Icons.book, size: 32,),
                 linea1: 'Manual',
                 linea2: 'Vamos',
                 colorw: Colors.red,
               ),
               WholeIcon(
-                trayecto: transcultural,
+                trayecto: MissionaryScreen(),
                 iconow: Icon(Icons.assistant, size: 32,),
                 linea1: 'Orar, Ofrendar',
                 colorw: Colors.blue,
@@ -310,7 +315,7 @@ class WholeIcon extends StatelessWidget {
   WholeIcon({@required this.iconow, @required  this.colorw, @required  this.trayecto, @required this.linea1, this.linea2});
   final Icon iconow;
   final Color colorw;
-  final Route trayecto;
+  final Widget trayecto;
   final String linea1;
   final String linea2;
   
@@ -324,10 +329,13 @@ class WholeIcon extends StatelessWidget {
         Padding(
           padding: const EdgeInsets.only(bottom: 8.0, top: 2),
           child: FloatingActionButton(
+            heroTag: linea1+linea2,
             child: iconow,
             backgroundColor: colorw,
             onPressed: () {
-              Navigator.push(context, trayecto);
+              Navigator.push(context, new MaterialPageRoute(
+                builder: (context) => trayecto
+              ));
             },
           ),
         ),

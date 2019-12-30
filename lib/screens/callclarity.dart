@@ -95,6 +95,7 @@ class CallClarity extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(8),
                       child: FloatingActionButton(
+                        heroTag: 'clarity',
                         child: Icon(Icons.arrow_back, size: 32,),
                         onPressed: ()=> Navigator.pop(context),
                       ),

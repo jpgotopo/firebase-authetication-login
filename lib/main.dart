@@ -24,7 +24,7 @@ class _TodoAppState extends State<TodoApp> {
   Future<Widget> getRootPage() async {
     FirebaseUser user = await FirebaseAuth.instance.currentUser();
     if (user != null) {
-      return MainTabsPage();
+      return MainTabsPage(); //TODO cambiar por TodosPage()
     } else {
       return RegisterPage();
     }

@@ -88,6 +88,7 @@ class TheologyStudies extends StatelessWidget {
                     Padding(
                       padding: EdgeInsets.all(8),
                       child: FloatingActionButton(
+                        heroTag: 'teologicos',
                         child: Icon(Icons.arrow_back, size: 32,),
                         onPressed: ()=> Navigator.pop(context),
                       ),

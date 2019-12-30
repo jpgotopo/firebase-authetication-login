@@ -31,7 +31,7 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:gpm_version_4/screens/fases.dart';
 
-class MyApp extends StatelessWidget {
+class TransCultural extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(

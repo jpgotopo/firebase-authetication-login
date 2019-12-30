@@ -47,6 +47,7 @@ class _CalendarPageState extends State<CalendarPage> {
         ),
       ),
       floatingActionButton: FloatingActionButton(
+        heroTag: 'calendar',
         elevation: 4,
         backgroundColor: Color(0xFF3EB16F),
         child: Icon(
