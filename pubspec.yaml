@@ -70,6 +70,8 @@ flutter:
    - give.png
    - move.png
    - pray.png
+   - flor.png
+   - rosario_celis.png
    
 
   # An image asset can refer to one or more resolution-specific "variants", see

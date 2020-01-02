@@ -52,14 +52,14 @@ class CardSwiperState extends State<CardSwiper> {
                   child: Column(
                     children: <Widget>[
                       Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(2.0),
                         child: Text(myData[index]['nombreProy'], style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
                       ),
                       Text(myData[index]['lugar']),
                       Padding(
-                        padding: const EdgeInsets.all(4.0),
+                        padding: const EdgeInsets.all(3.0),
                         child: Container(
-                          child: Image.asset('assets/arkani.png', height: 60, width: 60)),
+                          child: Image.asset('assets/rosario_celis.png', height: 70, width: 70)),
                       ),
                       SizedBox(height: 8,),
                       Row(
