@@ -1,11 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:gpm_version_4/pages/todos.dart';
 
 class ScreenPhases extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      theme: ThemeData.light(),
+      color: Colors.white,
+      debugShowCheckedModeBanner: false,
       home: PhasesGpm(),
       routes: <String, WidgetBuilder>{
+        '/todos'       : (BuildContext context) => TodosPage(), 
         '/screen1': (BuildContext context) => PhasesGpm(),
         '/screen2': (BuildContext context) => InfoFase1(),
         '/screen3': (BuildContext context) => InfoFase2(),
@@ -82,7 +87,7 @@ class PhasesGpm extends StatelessWidget {
                 heroTag: 'fases',
                 child: Icon( Icons.arrow_back ),
                 onPressed: () {
-                  Navigator.pop(context);
+                  Navigator.of(context).pushNamed('/todos');
                 },
               ),
             ),
@@ -139,56 +144,58 @@ class BannerTitled extends StatelessWidget {
 class InfoFase1 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Center(
-        child: Column(
-        
-          children: <Widget>[
-            SizedBox(height: 32.0),
-            Padding(
-              padding: const EdgeInsets.only(bottom:12.0),
-              child: BannerTitled(
-                color: Color(0xFF0055FE),
-                texto: 'Fase 1',
-                ancho: 0.3
+    return Scaffold(
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+          
+            children: <Widget>[
+              SizedBox(height: 32.0),
+              Padding(
+                padding: const EdgeInsets.only(bottom:12.0),
+                child: BannerTitled(
+                  color: Color(0xFF0055FE),
+                  texto: 'Fase 1',
+                  ancho: 0.3
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(10),
-            ),
-            Container(
-              height: 350.0,
-              child: ListView(
-                children: <Widget>[
-                  DataInfo(
-                    info: 'Tener pasión para servir \n como Misionero',
-                  ),
-                  DataInfo(
-                    info: 'Compromiso con el trabajo \n misionero de la iglesia local',
-                  ),
-                  DataInfo(
-                    info: 'Iniciado en las reuniones \n mensuales de GPM regional',
-                  ),
-                  DataInfo(
-                    info: 'Iniciado en las lecciones \n del curso Vamos',
-                  ),
-                ]
+              Padding(
+                padding: EdgeInsets.all(10),
               ),
-            ),
-             Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FloatingActionButton(
-                heroTag: 'fase1',
-                child: Icon( Icons.arrow_back ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+              Container(
+                height: 350.0,
+                child: ListView(
+                  children: <Widget>[
+                    DataInfo(
+                      info: 'Tener pasión para servir \n como Misionero',
+                    ),
+                    DataInfo(
+                      info: 'Compromiso con el trabajo \n misionero de la iglesia local',
+                    ),
+                    DataInfo(
+                      info: 'Iniciado en las reuniones \n mensuales de GPM regional',
+                    ),
+                    DataInfo(
+                      info: 'Iniciado en las lecciones \n del curso Vamos',
+                    ),
+                  ]
+                ),
               ),
-            ),  
+               Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FloatingActionButton(
+                  heroTag: 'fase1',
+                  child: Icon( Icons.arrow_back ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),  
 
-          ],
-        )
+            ],
+          )
+        ),
       ),
     );
     
@@ -198,60 +205,63 @@ class InfoFase1 extends StatelessWidget {
 class InfoFase2 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Center(
-        child: Column(
-        
-          children: <Widget>[
-            SizedBox(height: 32.0),
-            Padding(
-              padding: const EdgeInsets.only(bottom:3.0),
-              child: BannerTitled(
-                color: Color(0xFFFE7700),
-                texto: 'Fase 2',
-                ancho: 0.3
+    return Scaffold(
+     
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+          
+            children: <Widget>[
+              SizedBox(height: 32.0),
+              Padding(
+                padding: const EdgeInsets.only(bottom:3.0),
+                child: BannerTitled(
+                  color: Color(0xFFFE7700),
+                  texto: 'Fase 2',
+                  ancho: 0.3
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(10),
-            ),
-            Container(
-              height: 350.0,
-              child: ListView(
-                children: <Widget>[
-                  DataInfo(
-                    info: 'Tener claro el llamado misionero',
-                  ),
-                  
-                  DataInfo(
-                    info: 'Tener claro el lugar del llamado \nmisionero',
-                  ),
-                  DataInfo(
-                    info: 'Participar activamente del  GPM \nRegional',
-                  ),
-                  DataInfo(
-                    info: 'Participar activamente de \n las clases del Manual Vamos',
-                  ),
-                  DataInfo(
-                    info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.all(10),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FloatingActionButton(
-                heroTag: 'fase2',
-                child: Icon( Icons.arrow_back ),
-                onPressed: () {
-                  Navigator.pop(context);
-                },
+              Container(
+                height: 350.0,
+                child: ListView(
+                  children: <Widget>[
+                    DataInfo(
+                      info: 'Tener claro el llamado misionero',
+                    ),
+                    
+                    DataInfo(
+                      info: 'Tener claro el lugar del llamado \nmisionero',
+                    ),
+                    DataInfo(
+                      info: 'Participar activamente del  GPM \nRegional',
+                    ),
+                    DataInfo(
+                      info: 'Participar activamente de \n las clases del Manual Vamos',
+                    ),
+                    DataInfo(
+                      info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
+                    ),
+                  ],
+                ),
               ),
-            ),
-          ],
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FloatingActionButton(
+                  heroTag: 'fase2',
+                  child: Icon( Icons.arrow_back ),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                ),
+              ),
+            ],
+          ),
+          
         ),
-        
       ),
     );
   }
@@ -260,79 +270,82 @@ class InfoFase2 extends StatelessWidget {
 class InfoFase3 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Center(
-        child: Column(
-        
-          children: <Widget>[
-            SizedBox(height: 32.0),
-            Padding(
-              padding: const EdgeInsets.only(bottom:3.0),
-              child: BannerTitled(
-                color: Color(0xFFFE0034),
-                texto: 'Fase 3',
-                ancho: 0.3
+    return Scaffold(
+      
+      body: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Center(
+          child: Column(
+          
+            children: <Widget>[
+              SizedBox(height: 32.0),
+              Padding(
+                padding: const EdgeInsets.only(bottom:3.0),
+                child: BannerTitled(
+                  color: Color(0xFFFE0034),
+                  texto: 'Fase 3',
+                  ancho: 0.3
+                ),
               ),
-            ),
-            Padding(
-              padding: EdgeInsets.all(10),
-            ),
-            Container(
-              height: 350.0,
-              child: ListView(
-                children: <Widget>[
-                  DataInfo(
-                    info: 'Tener claro el llamado misionero',
-                  ),
-                  
-                  DataInfo(
-                    info: 'Tener claro el lugar del llamado \nmisionero',
-                  ),
-                  DataInfo(
-                    info: 'Haber terminado o estar por \nconcluir estudios teológicos',
-                  ),
-                  DataInfo(
-                    info: 'Haber terminado o estar por \nconcluir estudios transculturales',
-                  ),
-                  DataInfo(
-                    info: 'Haber terminado o estar por \nconcluir estudios de Inglés',
-                  ),
-                  DataInfo(
-                    info: 'Estar comprometido con el trabajo \n misionero de su iglesia local',
-                  ),
-                  DataInfo(
-                    info: 'Participar activamente mínimo \n2 años del  GPM Regional',
-                  ),
-                  DataInfo(
-                    info: 'Haber terminado o estar por concluir\n las clases del Manual Vamos',
-                  ),
-                  DataInfo(
-                    info: 'Haber asistido a un retiro GPM Nacional',
-                  ),
-                  DataInfo(
-                    info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
-                  ),
-                ],
+              Padding(
+                padding: EdgeInsets.all(10),
+              ),
+              Container(
+                height: 350.0,
+                child: ListView(
+                  children: <Widget>[
+                    DataInfo(
+                      info: 'Tener claro el llamado misionero',
+                    ),
+                    
+                    DataInfo(
+                      info: 'Tener claro el lugar del llamado \nmisionero',
+                    ),
+                    DataInfo(
+                      info: 'Haber terminado o estar por \nconcluir estudios teológicos',
+                    ),
+                    DataInfo(
+                      info: 'Haber terminado o estar por \nconcluir estudios transculturales',
+                    ),
+                    DataInfo(
+                      info: 'Haber terminado o estar por \nconcluir estudios de Inglés',
+                    ),
+                    DataInfo(
+                      info: 'Estar comprometido con el trabajo \n misionero de su iglesia local',
+                    ),
+                    DataInfo(
+                      info: 'Participar activamente mínimo \n2 años del  GPM Regional',
+                    ),
+                    DataInfo(
+                      info: 'Haber terminado o estar por concluir\n las clases del Manual Vamos',
+                    ),
+                    DataInfo(
+                      info: 'Haber asistido a un retiro GPM Nacional',
+                    ),
+                    DataInfo(
+                      info: 'Apoyar a algún proyecto, ya sea \n en oración, movilización u ofrenda ',
+                    ),
+                  ],
 
+                ),
               ),
-            ),
-            
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: FloatingActionButton(
-                heroTag: 'fase3',
-                child: Icon( Icons.arrow_back ),
-                onPressed: () {
-                  Navigator.of(context).pushNamed('/screen1');
-                },
+              
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: FloatingActionButton(
+                  heroTag: 'fase3',
+                  child: Icon( Icons.arrow_back ),
+                  onPressed: () {
+                    Navigator.of(context).pushNamed('/screen1');
+                  },
+                ),
               ),
-            ),
 
-          ],
-        
-      ),
-    ));
+            ],
+          
+        ),
+      )),
+    );
   }
 }
 

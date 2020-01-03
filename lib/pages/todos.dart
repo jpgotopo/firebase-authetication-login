@@ -154,7 +154,7 @@ class _MenuPrincipalState extends State<MenuPrincipal> {
         icono: IconButton(icon: Icon(Icons.contacts), onPressed: () {},),
         colorBox: Colors.purple,
         colorIcon: Colors.white,
-      )
+      ) 
 
   ];
     return GridView.count(

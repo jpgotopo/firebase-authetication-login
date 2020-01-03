@@ -1,32 +1,3 @@
-/* import 'package:flutter/material.dart';
-import 'package:gpm_version_4/screens/fases.dart';
-
-class TransCultural extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 300.0,
-      child: CustomScrollView(
-        slivers: <Widget>[
-          Container(
-            height: 50.0,
-            child: Text(
-              'Teología Bíblica de las Misiones',
-            ),
-            
-          ),
-          Container(
-            height: 50.0,
-            child: Text(
-               'Grandes Religiones Activas en el Mundo I'
-            )
-          )  
-        ],
-      ),
-      
-    );
-  }
-} */
 import 'package:flutter/material.dart';
 import 'dart:math' as math;
 import 'package:gpm_version_4/screens/fases.dart';
@@ -86,7 +57,7 @@ final double minHeight;
   }
 }
 class CollapsingList extends StatelessWidget {
-  SliverPersistentHeader makeHeader(String headerText, Color backcolor) {
+  SliverPersistentHeader makeHeader(String headerText, Color backcolor,) {
     return SliverPersistentHeader(
       pinned: true,
       delegate: _SliverAppBarDelegate(
@@ -124,7 +95,7 @@ class CollapsingList extends StatelessWidget {
             ],
           ),
         ),
-        
+        //TODO Trabajar con los Mediaquery para dar minHeight y maxHeight
         makeHeader('Módulo II', Color(0xFF2185BF)),
         SliverFixedExtentList(
           itemExtent: 100.0,
