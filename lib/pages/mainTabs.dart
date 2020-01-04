@@ -25,17 +25,18 @@ class MainTabsPage extends StatelessWidget {
           body: TabBarView(
             children: <Widget>[
               TodosPage(),
-              //LineaTiempo(),
+              LineaTiempo(),
               //TransCultural()
               //PhasesGpm(),
-              CursoVamos(),
+              //CursoVamos(),
               //ScreenPhases()
               //TheologyStudies()
               //LocalChurch()
               //CallClarity()
               //CallPlace()
               //MissionaryScreen()
-              LanguageAdvance()
+              //LanguageAdvance()
+              AddItem()
             ],
             
           ),

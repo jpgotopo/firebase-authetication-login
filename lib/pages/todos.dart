@@ -48,6 +48,7 @@ class TodosPage extends StatefulWidget {
 class _TodosPageState extends State<TodosPage> {
   @override
   Widget build(BuildContext context) {
+   
     return Scaffold(
       appBar: AppBar(
         title: Text('GPM Tracking', style: TextStyle(fontWeight: FontWeight.bold, fontSize: 24.0),), 
@@ -73,12 +74,13 @@ class _TodosPageState extends State<TodosPage> {
 class Profile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
+    final media = MediaQuery.of(context).size;
     return Padding(
       padding: const EdgeInsets.symmetric(vertical: 8.0),
       child: ListTile(
         leading: Container(
-          width: 55.0,
-          height: 55.0,
+          width: media.height * 0.081,
+          height: media.height * 0.081,
           decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
@@ -93,19 +95,15 @@ class Profile extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),
         ),
         subtitle: Text("Lima Centro", style: TextStyle(fontWeight: FontWeight.w500, fontSize: 11)),
-        trailing: Stack(
-          alignment: AlignmentDirectional.center,
-          children: <Widget>[
-            Container(
-              height: 40.0,
-              width: 90.0,
-              decoration: BoxDecoration(
-                color: Colors.lightBlueAccent,
-                borderRadius: BorderRadius.circular(10),
-              ),
-            ),
-            Text("Fase 3", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),),
-          ],
+        trailing: Container(
+          alignment: AlignmentDirectional.center,  
+          height: 40.0,
+          width: 90.0,
+          decoration: BoxDecoration(
+            color: Colors.lightBlueAccent,
+            borderRadius: BorderRadius.circular(10),
+          ),
+          child: Text("Fase 3", style: TextStyle(color: Colors.white, fontWeight: FontWeight.w800),),
         ),
 
       ),
