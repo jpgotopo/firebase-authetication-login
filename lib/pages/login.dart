@@ -147,6 +147,7 @@ class _LoginPageState extends State<LoginPage> {
       ),
       persistentFooterButtons: <Widget>[
         FlatButton(
+          
           onPressed: () {
             Navigator.of(context).pop();
           },

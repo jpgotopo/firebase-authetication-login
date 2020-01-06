@@ -1,3 +1,5 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 import 'dart:convert';
 import 'package:flutter_swiper/flutter_swiper.dart';
@@ -5,6 +7,7 @@ class CardSwiper extends StatefulWidget {
   @override
   CardSwiperState createState() => CardSwiperState();
 }
+int _switchColor = 9;
 
 class CardSwiperState extends State<CardSwiper> {
   @override
@@ -13,6 +16,7 @@ class CardSwiperState extends State<CardSwiper> {
     bool isOfrendar = true;
     bool isMovilizar = true;
     final media = MediaQuery.of(context).size;
+    var isPortrait = MediaQuery.of(context).orientation == Orientation.portrait;
     return Container(
       child: Center(
         child: new FutureBuilder(
@@ -27,8 +31,8 @@ class CardSwiperState extends State<CardSwiper> {
                 Offset(0.0, 0.0),
                 Offset(370, -40)
               ]),
-              itemHeight: media.height * 0.4,
-              itemWidth: media.width * .5,
+              itemHeight: isPortrait ? media.height * 0.5 : media.height * 0.7,
+              itemWidth: isPortrait ? media.width * .7 : media.width * 0.4,
               layout: SwiperLayout.STACK,
               itemCount: myData == null ? 0 : myData.length,
 
@@ -52,14 +56,19 @@ class CardSwiperState extends State<CardSwiper> {
                   child: Column(
                     children: <Widget>[
                       Padding(
-                        padding: const EdgeInsets.all(2.0),
+                        padding: const EdgeInsets.all(8.0),
                         child: Text(myData[index]['nombreProy'], style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500),textAlign: TextAlign.center,),
                       ),
                       Text(myData[index]['lugar']),
                       Padding(
                         padding: const EdgeInsets.all(3.0),
-                        child: Container(
-                          child: Image.asset('assets/rosario_celis.png', height: 70, width: 70)),
+                        child: StreamBuilder<Object>(
+                          stream: null,
+                          builder: (context, snapshot) {
+                            return Container(
+                              child: Image.network(myData[index]['image'], height: media.height * 0.15 , width: media.height*0.15));
+                          }
+                        ),
                       ),
                       SizedBox(height: 8,),
                       Row(
@@ -79,12 +88,14 @@ class CardSwiperState extends State<CardSwiper> {
                                 value: isOrar,
                                 onChanged: (value){
                                   setState((){
+                                    final random = Random();
                                     isOrar = value;
+                                    _switchColor = random.nextInt(9);
                                   });
                                 },
                                 inactiveThumbColor: Colors.red,
                                 activeTrackColor: Colors.lightBlueAccent, 
-                                activeColor: Colors.green[500],
+                                activeColor: Colors.green[_switchColor*100],
                               )
                             ],
                             
@@ -105,7 +116,7 @@ class CardSwiperState extends State<CardSwiper> {
                                 },
                                 inactiveThumbColor: Colors.red,
                                 activeTrackColor: Colors.lightBlueAccent, 
-                                activeColor: Colors.green[500],
+                                activeColor: Colors.green[_switchColor*100],
                               )
                             ],
                           ),
@@ -121,11 +132,12 @@ class CardSwiperState extends State<CardSwiper> {
                                 onChanged: (value){
                                   setState((){
                                     isMovilizar = value;
+                                    _switchColor = 
                                   });
                                 },
                                 inactiveThumbColor: Colors.red,
                                 activeTrackColor: Colors.lightBlueAccent, 
-                                activeColor: Colors.green[500],
+                                activeColor: Colors.green[_switchColor*100],
                               )
                             ],
                           ),

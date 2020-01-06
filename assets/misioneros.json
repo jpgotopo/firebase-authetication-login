@@ -2,274 +2,282 @@
   {
     "id": 1,
     "nombreProy": "Fam. Arkani",
-    "image": "arkani",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Asia del Sur",
     "proceso": "En Campo"
   },
   {
     "id": 2,
     "nombreProy": "Fam. Durán",
-    "image": "duran",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Quechua Panao",
     "proceso": "En Campo"
   },
   {
     "id": 3,
     "nombreProy": "Fam. Flores Diego",
-    "image": "flores_diego",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Amahuacas",
     "proceso": "En Campo"
   },
   {
     "id": 4,
     "nombreProy": "Fam. Garay Galvez",
-    "image": "garay_galvez",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Estados Unidos",
     "proceso": "En Campo"
   },
   {
     "id": 5,
     "nombreProy": "Fam. Salem",
-    "image": "salem",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Asia del Sur",
     "proceso": "En Campo"
   },
   {
     "id": 6,
     "nombreProy": "Fam. Soto Salazar",
-    "image": "soto_salazar",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Nomatsiguenga",
     "proceso": "En Campo"
   },
   {
     "id": 7,
     "nombreProy": "Mis. Belhu Mora",
-    "image": "belhu",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
     "lugar": "Mozambique",
     "proceso": "En Campo"
   },
   {
     "id": 8,
     "nombreProy": "Mis. Carmen Rodríguez",
-    "image": "carmen",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
     "lugar": "Estados Unidos",
     "proceso": "En Campo"
   },
   {
     "id": 9,
     "nombreProy": "Mis. Flor Méndez",
-    "image": "flor",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
     "lugar": "Europa y Medio Oriente",
     "proceso": "En Campo"
   },
   {
     "id": 10,
     "nombreProy": "Mis. Jim Perez",
-    "image": "jim",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
     "lugar": "Asháninkas",
     "proceso": "En Campo"
   },
   {
     "id": 11,
     "nombreProy": "Mis. Merary",
-    "image": "merary",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
     "lugar": "Asia Central",
     "proceso": "En Campo"
   },
   {
     "id": 12,
     "nombreProy": "Mis. Natalie",
-    "image": "natalie",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
     "lugar": "Asia Menor",
     "proceso": "En Campo"
   },
   {
     "id": 13,
     "nombreProy": "Mis. Rosmery Lopez",
-    "image": "rosmery",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
     "lugar": "Estados Unidos",
     "proceso": "En Campo"
   },
   {
     "id": 14,
     "nombreProy": "Fam. Ibrahim",
-    "image": "ibrahim",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_ibrahim.png",
     "lugar": "Asia del Sur",
     "proceso": "Gira Promocional"
   },
   {
     "id": 15,
     "nombreProy": "Fam. Maldonado",
-    "image": "maldonado",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Sudeste de Asia",
     "proceso": "Gira Promocional"
   },
   {
     "id": 16,
     "nombreProy": "Fam. Rivera Sandoval",
-    "image": "rivera_sandoval",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_rivera.png",
     "lugar": "España",
     "proceso": "Gira Promocional"
   },
   {
     "id": 17,
     "nombreProy": "Mis. Asha",
-    "image": "asha",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
     "lugar": "Asia del Sur",
     "proceso": "Gira Promocional"
   },
   {
     "id": 18,
     "nombreProy": "Mis. Ch'aska",
-    "image": "chaska",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/chaska.png",
     "lugar": "África",
     "proceso": "Gira Promocional"
   },
   {
     "id": 19,
     "nombreProy": "Mis. Fen",
-    "image": "fen",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fen.png",
     "lugar": "Asia del Este",
     "proceso": "Gira Promocional"
   },
   {
     "id": 20,
     "nombreProy": "Mis. Jael",
-    "image": "jael",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/jael.png",
     "lugar": "Asia del Sur",
     "proceso": "Gira Promocional"
   },
   {
     "id": 21,
     "nombreProy": "Mis. Miriam",
-    "image": "miriam",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/miriam.png",
     "lugar": "África del Norte",
     "proceso": "Gira Promocional"
   },
   {
     "id": 22,
     "nombreProy": "Mis. Rosario Celis",
-    "image": "rosario",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/rosario_celis.png",
     "lugar": "Cuba",
     "proceso": "Gira Promocional"
   },
   {
     "id": 23,
     "nombreProy": "Mis. Sami",
-    "image": "sami",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/sami.png",
     "lugar": "África del Este",
     "proceso": "Gira Promocional"
   },
   {
     "id": 24,
     "nombreProy": "Mis. Sunny",
-    "image": "sunny",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/sunny.png",
     "lugar": "Asia Oriental",
     "proceso": "Gira Promocional"
   },
   {
     "id": 25,
     "nombreProy": "Mis. Verónica Quispe",
-    "image": "veronica",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/veronica_quispe.png",
     "lugar": "Cuba",
     "proceso": "Gira Promocional"
   },
   {
     "id": 26,
     "nombreProy": "Mis. Gaviotina",
-    "image": "gaviotina",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/gaviotina.png",
     "lugar": "Asia del Sur",
     "proceso": "Gira Promocional"
   },
   {
     "id": 27,
     "nombreProy": "Mis. Erica Mallqui",
-    "image": "erica",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/ericka_mallqui.png",
     "lugar": "Uruguay",
     "proceso": "Gira Promocional"
   },
   {
     "id": 28,
     "nombreProy": "Fam. Tunqui",
-    "image": "tunqui",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/tunqui.png",
     "lugar": "Liberia",
     "proceso": "Gira Promocional"
   },
   {
     "id": 29,
     "nombreProy": "Fam. Juárez Kooyip",
-    "image": "juarez_kooyip",
-    "lugar": "Bulgariia",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
+    "lugar": "Bulgaria",
     "proceso": "En Campo"
   },
   {
     "id": 30,
     "nombreProy": "Mis. Rohode Raquel vda. De Quinchoker",
-    "image": "quinchoquer",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "En Campo"
   },
   {
     "id": 31,
     "nombreProy": "Fam. Mori Mego",
-    "image": "mori_mego",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "Gira Promocional"
   },
   {
     "id": 32,
     "nombreProy": "Mis. Leysi Sandoval",
-    "image": "leysi",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "Gira Promocional"
   },
   {
     "id": 33,
     "nombreProy": "Mis. Franklin Durán Martínez",
-    "image": "franklin",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "Gira Promocional"
   },
   {
     "id": 34,
     "nombreProy": "Mis. Diego Acosta",
-    "image": "diego",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "Gira Promocional"
   },
   {
     "id": 35,
     "nombreProy": "Mis. Luis Laurencio",
-    "image": "laurencio",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "Gira Promocional"
   },
   {
     "id": 36,
     "nombreProy": "Mis. Mery Simón Huaranga",
-    "image": "huaranga",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "Gira Promocional"
   },
   {
     "id": 37,
     "nombreProy": "Mis. Asunción vda. De Portugués",
-    "image": "asuncion",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "Gira Promocional"
   },
   {
     "id": 38,
     "nombreProy": "Fam. Flores Salazar",
-    "image": "flores_salazar",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "África del Este",
     "proceso": "Gira Promocional"
   },
   {
     "id": 39,
     "nombreProy": "Mis. Hugo Malpartida",
-    "image": "hugo",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
     "lugar": "Comunidades Nativas",
     "proceso": "Gira Promocional"
+  },
+  {
+    "id": 40,
+    "nombreProy": "Fam. Rumi",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_rumi.png",
+    "lugar": "Asia",
+    "proceso": "Gira Promocional"
   }
+  
 ]
