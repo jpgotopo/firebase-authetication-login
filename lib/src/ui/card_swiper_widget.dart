@@ -132,7 +132,7 @@ class CardSwiperState extends State<CardSwiper> {
                                 onChanged: (value){
                                   setState((){
                                     isMovilizar = value;
-                                    _switchColor = 
+                                    
                                   });
                                 },
                                 inactiveThumbColor: Colors.red,
