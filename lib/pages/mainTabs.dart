@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 //import 'package:gpm_version_4/pages/settings.dart';
 import 'package:gpm_version_4/pages/todos.dart';
+import 'package:gpm_version_4/screens/contactos.dart';
 import 'package:gpm_version_4/screens/language_advance.dart';
 //import 'package:gpm_version_4/pages/todosArchive.dart';
 //import 'package:gpm_version_4/screens/callclarity.dart';
@@ -36,7 +37,8 @@ class MainTabsPage extends StatelessWidget {
               //CallPlace()
               //MissionaryScreen()
               //LanguageAdvance()
-              AddItem()
+              //AddItem()
+              ContactosGpm()
             ],
             
           ),
