@@ -230,7 +230,7 @@ class LineaTiempoItems extends StatelessWidget {
       ],
     );
 
-    //TODO agregar Opción para que el usuario añada item a línea de tiempo//
+    
   }
 }
 

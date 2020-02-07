@@ -2,77 +2,77 @@
   {
     "id": 1,
     "nombreProy": "Fam. Arkani",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/arkani.png",
     "lugar": "Asia del Sur",
     "proceso": "En Campo"
   },
   {
     "id": 2,
     "nombreProy": "Fam. Durán",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/duran.png",
     "lugar": "Quechua Panao",
     "proceso": "En Campo"
   },
   {
     "id": 3,
     "nombreProy": "Fam. Flores Diego",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/flores_diego.png",
     "lugar": "Amahuacas",
     "proceso": "En Campo"
   },
   {
     "id": 4,
     "nombreProy": "Fam. Garay Galvez",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/garay.png",
     "lugar": "Estados Unidos",
     "proceso": "En Campo"
   },
   {
     "id": 5,
     "nombreProy": "Fam. Salem",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/salem.png",
     "lugar": "Asia del Sur",
     "proceso": "En Campo"
   },
   {
     "id": 6,
     "nombreProy": "Fam. Soto Salazar",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/fam_maldonado.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/soto_salazar.png",
     "lugar": "Nomatsiguenga",
     "proceso": "En Campo"
   },
   {
     "id": 7,
     "nombreProy": "Mis. Belhu Mora",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/belhu.png",
     "lugar": "Mozambique",
     "proceso": "En Campo"
   },
   {
     "id": 8,
     "nombreProy": "Mis. Carmen Rodríguez",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/carmen_rodriguez.png",
     "lugar": "Estados Unidos",
     "proceso": "En Campo"
   },
   {
     "id": 9,
     "nombreProy": "Mis. Flor Méndez",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/flor.png",
     "lugar": "Europa y Medio Oriente",
     "proceso": "En Campo"
   },
   {
     "id": 10,
     "nombreProy": "Mis. Jim Perez",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/jim_perez.png",
     "lugar": "Asháninkas",
     "proceso": "En Campo"
   },
   {
     "id": 11,
     "nombreProy": "Mis. Merary",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/merary.png",
     "lugar": "Asia Central",
     "proceso": "En Campo"
   },
@@ -86,7 +86,7 @@
   {
     "id": 13,
     "nombreProy": "Mis. Rosmery Lopez",
-    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/asha.png",
+    "image": "https://workersdnm.s3-sa-east-1.amazonaws.com/rosmery.png",
     "lugar": "Estados Unidos",
     "proceso": "En Campo"
   },
