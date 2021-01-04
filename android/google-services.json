@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "588234542273",
+    "firebase_url": "https://gpm-tracker.firebaseio.com",
+    "project_id": "gpm-tracker",
+    "storage_bucket": "gpm-tracker.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:588234542273:android:97239ad788acf9b8dcd840",
+        "android_client_info": {
+          "package_name": "com.example.gpm_tracking"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "588234542273-r7q2i67g56tt91q3248d2ogn6kupstln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_n7QPRb1azJpxoLyQ2N3SE0gFTKsVY2A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "588234542273-r7q2i67g56tt91q3248d2ogn6kupstln.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

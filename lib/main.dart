@@ -1,4 +1,4 @@
-import 'package:firebase_auth/firebase_auth.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gpm_version_4/src/models/obreros_model.dart';
 import 'package:gpm_version_4/services/worker_services.dart';
@@ -7,7 +7,7 @@ import 'dart:async';
 import 'package:gpm_version_4/pages/register.dart';
 import 'package:gpm_version_4/routes.dart';
 import 'package:gpm_version_4/theme.dart';
-
+import 'package:firebase_auth/firebase_auth.dart' ;
 void main() {
   runApp(new TodoApp());
   }
